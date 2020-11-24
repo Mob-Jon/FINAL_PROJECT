@@ -9,4 +9,4 @@ router.get("/student/:id", studentController.getStudent)
 router.patch("/student/:id", studentController.editStudent)
 router.delete("/student/:id", studentController.delStudent)
 
-module.exports = router
+module.exports = router;
