@@ -60,17 +60,36 @@
         </div>
         <!-- STUDENTS -->
         <div id="student" class="content">
+            <i class="fas fa-bars"></i>
             <div class="head">
-                <div class="heading">
-                    <i class="fas fa-bars"></i>
-                    <h2>Students</h2>
-                </div>
+                <h2>Students</h2>
                 <div class="add-btn">
-                    <button type="submit" name="btn-add"><i class="fas fa-user-plus"></i>ADD STUDENT</button>
+                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal"><i
+                            class="fas fa-user-plus"></i>ADD STUDENT</button>
                 </div>
             </div>
             <hr>
             <div class="students-main-content">
+                <div class="student-main-content-searches">
+                    <form action="" method="post" class="student-main-content-form">
+                        <div class="form-col">
+                            <input type="text" name="search-by-course" placeholder="search by course">
+                            <button type="submit">Search Student</button>
+                        </div>
+                        <div class="form-col">
+                            <input type="text" name="search-by-year" placeholder="search by year">
+                            <button type="submit">Search Student</button>
+                        </div>
+                        <div class="form-col">
+                            <input type="text" name="search-by-surname" placeholder="search by surname">
+                            <button type="submit">Search Student</button>
+                        </div>
+                        <div class="form-col">
+                            <input type="text" name="search-by-school-year" placeholder="search by school year">
+                            <button type="submit">Search Student</button>
+                        </div>
+                    </form>
+                </div>
                 <h5>List of all students</h5>
                 <table class="students-table">
                     <tr>
@@ -83,6 +102,8 @@
                         <th>Email</th>
                         <th>Course</th>
                         <th>Year</th>
+                        <th>Actions</th>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>Jonalyn</td>
@@ -94,6 +115,8 @@
                         <td>jonalynmobilla69@gmail.com</td>
                         <td>CCT</td>
                         <td>2</td>
+                        <td><button class="update"><i class="fas fa-edit"></i> Update</button></td>
+                        <td><button class="delete"><i class="fas fa-trash"></i> Delete</button></td>
                     </tr>
                     <tr>
                         <td>Quency</td>
@@ -105,6 +128,21 @@
                         <td>quencyatacador@gmail.com</td>
                         <td>CCT</td>
                         <td>2</td>
+                        <td><button class="update"><i class="fas fa-edit"></i>Update</button></td>
+                        <td><button class="delete"><i class="fas fa-trash"></i>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Shenna</td>
+                        <td>Caneda</td>
+                        <td>19</td>
+                        <td>12-23-2000</td>
+                        <td>Leyte</td>
+                        <td>09254879632</td>
+                        <td>shennacaneda@gmail.com</td>
+                        <td>CCT</td>
+                        <td>2</td>
+                        <td><button class="update"><i class="fas fa-edit"></i>Update</button></td>
+                        <td><button class="delete"><i class="fas fa-trash"></i>Delete</button></td>
                     </tr>
                 </table>
             </div>
@@ -127,6 +165,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </body>
 
