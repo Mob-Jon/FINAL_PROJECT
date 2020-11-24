@@ -15,15 +15,24 @@ body{
     width: 100%;
     margin: -2em auto;
 }
-.logo button{
+.account-get button{
     width: 13%;
-    margin: 0 auto;
+    margin: 0 1em;
     font-size: 1.3rem;
     padding: 0.4em 0.4em;
     background-color: rgb(0, 140, 255);
     color: white;
     border: 2px solid rgb(0, 140, 255);
     border-radius: 5px;
+}
+.account-get button:focus{
+    border: 1px solid rgb(0, 140, 255);
+    color: rgb(245, 248, 250);
+    outline: none;
+}
+.account-get{
+    display: flex;
+    justify-content: center;
 }
 .modal-body{
     display: flex;
@@ -49,4 +58,10 @@ body{
 .fa-user-circle.text-center{
     font-size: 6rem;
     margin:-0.5em 0em 0em 0em;
+}
+@media (max-width:620px){
+    .account-get{
+        flex-direction: column;
+        margin: 0;
+    }
 }

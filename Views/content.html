@@ -34,6 +34,7 @@
                 <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
                 <li><a href="#recognition"><i class="fas fa-trophy"></i> Recognitions</a></li>
             </ul>
+            
         </nav>
     </aside>
     <br><br>
@@ -73,7 +74,20 @@
                 <div class="student-main-content-searches">
                     <form action="" method="post" class="student-main-content-form">
                         <div class="form-col">
-                            <input type="text" name="search-by-course" placeholder="search by course">
+                            <!-- <input type="text" name="search-by-course" placeholder="search by course"> -->
+                            <select name="select-course" id="course">
+                                <option value="">SELECT COURSE</option>
+                                <option value="">CCT</option>
+                                <option value="">BSIT</option>
+                                <option value="">BS Interior Design</option>
+                                <option value="">BSA</option>
+                                <option value="">BSBA Major in MM</option>
+                                <option value="">BSED</option>
+                                <option value="">BSCE</option>
+                                <option value="">AB Broadcasting</option>
+                                <option value="">BA</option>
+                                <option value="">BS Psychology</option>
+                            </select>
                             <button type="submit">Search Student</button>
                         </div>
                         <div class="form-col">
@@ -85,7 +99,13 @@
                             <button type="submit">Search Student</button>
                         </div>
                         <div class="form-col">
-                            <input type="text" name="search-by-school-year" placeholder="search by school year">
+                            <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
+                            <select name="select-school-year" id="school-year">
+                                <option value="">S.Y 2019-2020</option>
+                                <option value="">S.Y 2019-2018</option>
+                                <option value="">S.Y 2018-2017</option>
+                                <option value="">S.Y 2017-2016</option>
+                            </select>
                             <button type="submit">Search Student</button>
                         </div>
                     </form>
