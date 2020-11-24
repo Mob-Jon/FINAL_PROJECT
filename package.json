@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Mob-Jon/FINAL_PROJECT#readme",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.15",
     "nodemon": "^2.0.6"
