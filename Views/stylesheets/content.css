@@ -13,51 +13,53 @@ header{
 .logo img{
     width: 100%;
     max-width: 18%;
-    margin: -3vw 0vw -4.5vw 5vw;
+    margin: -3vw 0vw -3.6vw 5vw;
 }
 .sidenav{
     position: fixed;
     background: rgb(0, 140, 255);
     left: 0em;
-    margin-top: 2.85em;
+    margin-top: 5.33vw;
+    top: 0;
     width: 15%;
     height: 100%;
     transition: 0.5s;
-    transition-property: left;
+    transition-property: all;
     overflow-x: hidden;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .sidenav .profile img{
     width: 100%;
     max-width: 30%;
-    border-radius: 100%;
-    margin-top: 1.2em;
-    margin-bottom: -0.8em;
+    border-radius: 3vw;
+    margin-top: 1.3vw;
+    margin-bottom: 0.5vw;
 }
-h4{
-    font-size: 1rem;
+.name{
+    font-size: 1.5vw;
     color: white;
 }
-h5{
-    font-size: 1.2rem;
-    margin: 1.5em 1em 0.3em 0.5em;
+.general{
+    font-size: 1.5vw;
+    margin: 1vw 1vw 0.3vw 0.8vw;
 }
-nav ul li a{
+/* nav ul li a{
     display: block;
-}
+} */
+
 nav ul{
     list-style: none;
     width: 100%;
     margin: 0 auto;
-    padding: 0.3em 0em 0em 0em;
+    padding: 0.3vw 0vw 0vw 0vw;
 }
 nav li{
-    padding: 0.75em 0em 0.75em 1.3em;
-    margin: 0em 0em 0em 0.5em;
-    font-size: 1.05rem;
+    padding: 0.75vw 0vw 0.75vw 1.3vw;
+    margin: 0vw 0vw 0vw 0.5vw;
+    font-size: 1.2vw;
     transition: 0.5s;
     transition-property: background;
-    border-radius: 0.7em 0em 0em 0.7em;
+    border-radius: 0.7vw 0vw 0vw 0.7vw;
 }
 nav li:hover{
     background: rgb(109, 179, 236);
@@ -66,8 +68,11 @@ nav a{
     text-decoration-line: none;
     color: rgb(3, 68, 121);
 }
+nav a:hover{
+    text-decoration-line: none;
+}
 nav i {
-    padding: 0em .4em 0em 0em;
+    padding: 0vw .3vw 0vw 0vw;
 }
 nav li.active{
     /* background: rgb(1, 86, 155); */
@@ -75,14 +80,25 @@ nav li.active{
 }
 nav .user a , nav .user li{
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.3vw;
     list-style: none;
+}
+nav .user button{
+    padding: 0.4vw 0.5vw;
+    margin: 1vw 3vw;
+    background: black;
+    color: white;
+    font-size: 1vw;
+}
+nav .user .user-user{
+    font-size: 1.5vw;
+    margin: 1vw 1vw 0.3vw 0.8vw;
 }
 main{
     width: 82%;
-    margin-left: 9em;
-    margin-top: 1.5em;
-    padding: 0em 1em 0em 0.5;
+    margin-left: 17vw;
+    margin-top: 5vw;
+    padding: 0vw 1vw 0vw 0.5vw;
     transition: 0.5s;
     transition-property: margin-left;
 }
@@ -94,9 +110,9 @@ main{
 .fa-bars:hover{
     color:rgb(0, 140, 255) ;
 }
-main hr{
+/* main hr{
     margin-top: -1em;
-}
+} */
 @media (max-width: 800px){
     .fa-bars{
         display: block;
@@ -106,7 +122,7 @@ main hr{
     }
     main{
         width: 100%;
-        margin-left: 1em;
+        margin-left: 1.8vw;
         margin-top: 0;
         padding: 0;
     }
@@ -114,12 +130,18 @@ main hr{
 .main-content{
     display: flex;
     justify-content: space-around;
-    margin: 1em 0em 0em 0em;
+    margin: 1vw 0vw 0vw 0vw;
 }
 .main-content .card-content{
     box-shadow: 1px 2px 20px 4px rgba(128, 128, 128, 0.322);
-    padding: 1.3em 2em;
-    border-radius: 0.3em;
+    padding: 1.3vw 2vw;
+    border-radius: 0.3vw;
+}
+.content-name{
+    font-size: 3vw;
+}
+.card-content-name{
+    font-size: 1.5vw;
 }
 @media (max-width: 800px) {
     .main-content{
@@ -129,25 +151,22 @@ main hr{
 .head{
     display: flex;
     justify-content: space-between;
-    margin: -1.12em auto;
+    margin: 1vw auto -1.3vw auto;
 }
 .add-btn{
-    padding: 1.3em 2em 0em 0em;
+    padding: 1vw 2vw 1vw 0vw;
 }
 .add-btn button,
 .add-btn button:focus{
-    padding: 0.7em 0.9em;
-    background-color: rgb(0, 140, 255);
-    color: white;
-    border: rgb(0, 140, 255);
-    border-radius: 0.5em;
-    font-size: 1rem;
+    padding: 0.6vw 0.7vw;
+    border-radius: 0.5vw;
+    font-size: 1.2vw;
 }
 .add-btn i{
-    padding-right: .2em;
+    padding-right: .2vw;
 }
 .student-main-content-searches{
-    margin: 1.3em 0em;
+    margin: 2.5vw 0vw;
 }
 .student-main-content-form{
     display: flex;
@@ -155,18 +174,20 @@ main hr{
 }
 .student-main-content-form .form-col{
     display: flex;
-    margin: 0 0.3em;
+    margin: 0 0.3vw;
 }
 .student-main-content-form .form-col select, .student-main-content-form .form-col input{
-    padding: 0.5em 0.5em;
+    padding: 0.5vw 0.7vw;
     border:1px solid rgb(0, 140, 255);
-    font-size: 0.9rem;
+    font-size: 0.9vw;
+    border-right-style: none;
+    border-radius: 0.3vw 0vw 0vw 0.3vw;
 }
 .form-col select option{
     background: rgb(0, 140, 255);
     color: white;
-    font-size: 0.9rem;
-    margin: 2em 0em;
+    font-size: 1.1vw;
+    margin: 2vw 0vw;
 }
 .form-col select option:hover{
     background: rgb(6, 43, 73);
@@ -174,23 +195,25 @@ main hr{
 .form-col select:focus, .form-col input:focus{
     outline: none !important;
     border:1px solid rgb(0, 140, 255);
-    box-shadow: 0em 0em 0.5em 0em#6497ce;
-
+    box-shadow: 0vw 0vw 0.5vw 0vw#6497ce;
+    border-right-style: none;
 }
 .form-col button{
-    color: white;
-    background-color: rgb(0, 140, 255);
-    border: 1px solid rgb(0, 140, 255);
-    border-radius: 0em 0.3em 0.3em 0em;
-}
-.form-col select, .form-col input{
-    border-radius: 0.3em 0em 0em 0.3em;
+    /* color: white;
+    background-color: rgb(0, 140, 255); */
+    /* border: 1px solid rgb(0, 140, 255); */
+    border-radius: 0vw 0.3vw 0.3vw 0vw;
+    font-size: 1vw;
 }
 .form-col button:hover , .form-col button:focus{
     background-color: transparent;
     border: 1px solid rgb(0, 140, 255);
     color: rgb(0, 140, 255);
     transition: 0.5s;
+}
+.list-name-table{
+    font-size: 2vw;
+    margin-top: 2vw;
 }
 .students-table{
     border-collapse: collapse;
@@ -203,7 +226,7 @@ main hr{
 }
 .students-table td, th{
     border: 1px solid #ddd;
-    padding: 0.5em 0.6em;
+    padding: 0.5vw 0.6vw;
 }
 .students-table tr:nth-child(even){
     background-color: rgba(6, 142, 253, 0.452);
@@ -212,26 +235,16 @@ main hr{
     background-color: rgb(98, 177, 241);
 }
 .students-table td{
-    font-size: 0.9rem;
+    font-size: 1vw;
 }
 .students-table th{
-    font-size: 1rem;
+    font-size: 1.25vw;
 }
-.update{
-    padding: 0.5em 0.7em;
-    background-color: rgb(7, 114, 202);
-    color: white;
-    border: rgb(0, 140, 255);
-    border-radius: 0.5em;
-    font-size: 0.8rem;
+.students-table td .btn{
+    font-size: 1vw;
 }
-.delete{
-    padding: 0.5em 0.7em;
-    background-color: rgb(3, 70, 124);
-    color: white;
-    border: rgb(0, 140, 255);
-    border-radius: 0.5em;
-    font-size: 0.8rem;
+.update i, .delete i{
+    padding-right: 0.2vw;
 }
 .dark-mode {
     background-color: black;

@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./stylesheets/content.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>SOUTHAMPTON UNIVERSITY</title>
 </head>
 
@@ -23,16 +23,18 @@
         </div>
     </header>
     <aside class="sidenav">
-        <center>
-            <div class="profile">
+        <!-- <center> -->
+        <div class="profile">
+            <center>
                 <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/"
                     alt="profile">
-                <h4>Jonalyn Mobilla</h4>
-            </div>
-        </center>
+                <p class="name">Jonalyn Mobilla</p>
+            </center>
+        </div>
+        <!-- </center> -->
         <hr>
         <nav>
-            <h5>GENERAL</h5>
+            <p class="general"><strong>GENERAL</strong></p>
             <ul>
                 <li class="active"><a href="#dashboard"><i class="fas fa-desktop"></i> Dashboard</a></li>
                 <li><a href="#student"><i class="fas fa-users"></i> Students</a></li>
@@ -40,9 +42,9 @@
                 <li><a href="#recognition"><i class="fas fa-trophy"></i> Recognitions</a></li>
             </ul>
             <div class="user">
-                <h5>USER</h5>
-                <li><a href=""><i class="fas fa-sign-out-alt"></i>Log out</a></li>
-                <button onclick="toggle_mode()" class="btn-mode">Dark mode</button>
+                <p class="user-user"><strong>USER</strong></h5>
+                    <li><a href=""><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+                    <button onclick="toggle_mode()" class="btn-mode btn">Dark mode</button>
             </div>
         </nav>
     </aside>
@@ -51,17 +53,17 @@
         <!-- DASHBOARD -->
         <div id="dashboard" class="content">
             <i class="fas fa-bars"></i>
-            <h2>Dashboard</h2>
-            <hr>
+            <p class="content-name">Dashboard</p>
+            <hr class="hr-content">
             <div class="main-content">
                 <div class="card-content">
-                    <h5>No. of Student <br><span>S.Y 2019-present</span></h5>
+                    <p class="card-content-name"><strong>No. of Student <br><span>S.Y 2019-present</span></strong></p>
                 </div>
                 <div class="card-content">
-                    <h5>No. of students <br><span>S.Y 2018-2019</span></h5>
+                    <p class="card-content-name"><strong>No. of students <br><span>S.Y 2018-2019</span></strong></p>
                 </div>
                 <div class="card-content">
-                    <h5>School revenue</h5>
+                    <p class="card-content-name"><strong>School revenue</strong></p>
                 </div>
             </div>
             <div>
@@ -72,13 +74,13 @@
         <div id="student" class="content">
             <i class="fas fa-bars"></i>
             <div class="head">
-                <h2>Students</h2>
+                <p class="content-name">Students</p>
                 <div class="add-btn">
-                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal"><i
+                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal" class="btn-primary"><i
                             class="fas fa-user-plus"></i>ADD STUDENT</button>
                 </div>
             </div>
-            <hr>
+            <hr class="hr-content">
             <div class="students-main-content">
                 <div class="student-main-content-searches">
                     <form action="" method="post" class="student-main-content-form">
@@ -97,15 +99,15 @@
                                 <option value="">BA</option>
                                 <option value="">BS Psychology</option>
                             </select>
-                            <button type="submit">Search Student</button>
+                            <button type="submit" class="btn">Search Student</button>
                         </div>
                         <div class="form-col">
                             <input type="text" name="search-by-year" placeholder="search by year">
-                            <button type="submit">Search Student</button>
+                            <button type="submit" class="btn">Search Student</button>
                         </div>
                         <div class="form-col">
                             <input type="text" name="search-by-surname" placeholder="search by surname">
-                            <button type="submit">Search Student</button>
+                            <button type="submit" class="btn">Search Student</button>
                         </div>
                         <div class="form-col">
                             <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
@@ -115,12 +117,12 @@
                                 <option value="">S.Y 2018-2017</option>
                                 <option value="">S.Y 2017-2016</option>
                             </select>
-                            <button type="submit">Search Student</button>
+                            <button type="submit" class="btn">Search Student</button>
                         </div>
                     </form>
                 </div>
-                <h5>List of all students</h5>
-                <table class="students-table">
+                <p class="list-name-table">List of all students</p>
+                <table class="students-table table-responsive">
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -144,8 +146,8 @@
                         <td>jonalynmobilla69@gmail.com</td>
                         <td>CCT</td>
                         <td>2</td>
-                        <td><button class="update"><i class="fas fa-edit"></i> Update</button></td>
-                        <td><button class="delete"><i class="fas fa-trash"></i> Delete</button></td>
+                        <td><button class="update btn btn-info"><i class="fas fa-edit"></i>Update</button></td>
+                        <td><button class="delete btn btn-danger"><i class="fas fa-trash"></i>Delete</button></td>
                     </tr>
                     <tr>
                         <td>Quency</td>
@@ -157,8 +159,8 @@
                         <td>quencyatacador@gmail.com</td>
                         <td>CCT</td>
                         <td>2</td>
-                        <td><button class="update"><i class="fas fa-edit"></i>Update</button></td>
-                        <td><button class="delete"><i class="fas fa-trash"></i>Delete</button></td>
+                        <td><button class="update btn btn-info"><i class="fas fa-edit"></i>Update</button></td>
+                        <td><button class="delete btn btn-danger"><i class="fas fa-trash"></i>Delete</button></td>
                     </tr>
                     <tr>
                         <td>Shenna</td>
@@ -170,9 +172,9 @@
                         <td>shennacaneda@gmail.com</td>
                         <td>CCT</td>
                         <td>2</td>
-                        <td><button class="update" data-toggle="modal" data-target="#myModal-2"><i
+                        <td><button class="update btn btn-info" data-toggle="modal" data-target="#myModal-2"><i
                                     class="fas fa-edit"></i>Update</button></td>
-                        <td><button class="delete"><i class="fas fa-trash"></i>Delete</button></td>
+                        <td><button class="delete btn btn-danger"><i class="fas fa-trash"></i>Delete</button></td>
                     </tr>
                 </table>
             </div>
@@ -180,20 +182,19 @@
         <!-- FACULTY -->
         <div id="faculty" class="content">
             <i class="fas fa-bars"></i>
-            <h2>Faculty</h2>
+            <p class="content-name">Faculty</p>
             <hr>
         </div>
         <!-- RECOGNITION -->
         <div id="recognition">
             <i class="fas fa-bars"></i>
-            <h2>Recognitions</h2>
+            <p class="content-name">Recognitions</p>
             <hr>
         </div>
     </main>
     <div class="container">
         <div class="modal fade" id="myModal-2" role="dialog">
             <div class="modal-dialog">
-
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -223,12 +224,13 @@
         function toggle_mode() {
             let element = document.body;
             let text = document.getElementsByClassName('btn-mode');
-            element.classList.toggle('dark-mode');
-            if(text.innerHTML == 'Dark mode'){
-                text.innerHTML == 'Light Mode';
-            }
-            else{
-                text.innerHTML == 'Dark Mode';
+            if (element.classList.toggle('dark-mode')) {
+                if (text.innerText == 'Dark mode') {
+                    text.innerText == 'Light Mode';
+                }
+                else {
+                    text.innerText == 'Dark Mode';
+                }
             }
         }
     </script>
