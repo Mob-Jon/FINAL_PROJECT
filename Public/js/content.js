@@ -13,6 +13,18 @@ $(document).ready(() => {
         var id = $(this).find('a').attr('href');
         $(id).show().siblings().hide();    
     });
+    $('.btn-mode').on('click', function(){
+      let body = $('body');
+      let buttontext = $('.btn-mode');
+      console.log(buttontext);
+      body.toggleClass('dark-mode');
+      if(buttontext.text() == 'Dark mode'){
+        buttontext.text() = 'Light mode';
+      }
+      else{
+        buttontext.text() = 'Dark mode';
+      }
+    })
     new Chart(document.getElementById("bar-chart"), {
         type: 'bar',
         data: {
