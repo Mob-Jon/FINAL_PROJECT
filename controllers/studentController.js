@@ -10,9 +10,11 @@ const getAllStudent = async(req, res) => {
                 error: "Error in getting all students information"
             })
         }
-        res.status(200).json({
-            students: students
-        })
+        // res.status(200).json({
+        //         students: students
+        //     })
+        res.render('content', { students: students });
+
     } catch (error) {
         return res.status(404).json({
             error: error
@@ -29,7 +31,8 @@ const addStudent = async(req, res) => {
             age: req.body.age,
             address: req.body.address,
             contactnumber: req.body.contactnumber,
-            course: req.body.course
+            course: req.body.course,
+            year: req.body.year
         }
         const newStudent = new studentModel(student)
         const all = await newStudent.save()
