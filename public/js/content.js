@@ -1,10 +1,14 @@
 $(document).ready(() => {
+  //ACTIVE NAV
     $("ul li").on('click',function () {
           $(this).addClass('active').siblings().removeClass('active');
     });
+  //TOGGLE BARS
     $('.fa-bars').on('click', function(){
         $('.sidenav').toggle(500);
-    })
+        $('main').removeClass('main');
+    });
+  //DISPLAY SPECIFIC CONTENT
     $('#dashboard').show();
     $('#student').hide();
     $('#faculty').hide();
@@ -13,6 +17,7 @@ $(document).ready(() => {
         var id = $(this).find('a').attr('href');
         $(id).show().siblings().hide();    
     });
+  //DARK MODE
     $('.btn-mode').on('click', function(){
       let body = $('body');
       let buttontext = $('.btn-mode');
@@ -25,6 +30,7 @@ $(document).ready(() => {
         buttontext.text() = 'Dark mode';
       }
     })
+  //CHARTS DASHBOARD
     new Chart(document.getElementById("bar-chart"), {
         type: 'bar',
         data: {
