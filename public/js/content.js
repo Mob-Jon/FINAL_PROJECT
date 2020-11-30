@@ -4,10 +4,9 @@ $(document).ready(() => {
           $(this).addClass('active').siblings().removeClass('active');
     });
   //TOGGLE BARS
-    $('.fa-bars').on('click', function(){
-        $('.sidenav').toggle(500);
-        $('main').removeClass('main');
-    });
+    // $('.fa-bars').on('click', function(){
+    //     $('.sidenav').toggle(500);
+    // });
   //DISPLAY SPECIFIC CONTENT
     $('#dashboard').show();
     $('#student').hide();

@@ -9,22 +9,35 @@ header{
     position: fixed;
     margin: 0vw 0vw;
 }
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
 .logo img{
     width: 100%;
     max-width: 18%;
     margin: -3vw 0vw -3vw 5vw;
 }
+.fa-bars{
+    transition: 0.3s;
+    transition-property: color;
+    padding: 2vw 4vw;
+    font-size: 2.3vw;
+    color: rgb(255, 253, 253);
+}
+.fa-bars:hover{
+    color:rgb(107, 108, 109) ;
+}
 .sidenav{
     position: fixed;
     background: rgb(0, 140, 255);
     left: 0vw;
-    margin-top: 5.85vw;
+    margin-top: 6.3vw;
     width: 16%;
     height: 100%;
     transition: 0.5s;
-    transition-property: left;
-    overflow-x: hidden;
-    z-index: 1;
+    /* transition-property: left; */
+    /* overflow-x: hidden; */
 }
 .sidenav .profile img{
     width: 100%;
@@ -76,7 +89,7 @@ nav a:hover{
     color: black;
 }
 nav i {
-    padding: 0vw .4vw 0vw 0vw;
+    padding: 0vw .5vw 0vw 0vw;
 }
 nav li.active{
     /* background: rgb(1, 86, 155); */
@@ -102,28 +115,20 @@ main{
     transition: 0.5s;
     transition-property: margin-left;
 }
-.fa-bars{
-    transition: 0.3s;
-    transition-property: color;
-    display: none;
-}
-.fa-bars:hover{
-    color:rgb(0, 140, 255) ;
-}
 .hr-content{
     border: 0.1px solid rgba(156, 155, 155, 0.5);
 }
 @media (max-width: 800px){
-    .fa-bars{
+    /* .fa-bars{
         display: block;
-    }
+    } */
     .sidenav{
         display: none;
     }
     main{
         width: 100%;
         margin-left: 1vw;
-        margin-top: 0;
+        margin-top: 1vw;
         padding: 0;
     }
 }
@@ -137,7 +142,7 @@ main{
 }
 .main-content .card-content{
     box-shadow: 1px 2px 20px 4px rgba(128, 128, 128, 0.322);
-    padding: 1.3vw 2vw;
+    padding: 2.5vw 5.5vw;
     border-radius: 0.3vw;
 }
 .card-content-name{
@@ -146,6 +151,10 @@ main{
 @media (max-width: 800px) {
     .main-content{
         flex-direction: column;
+    }
+    .main-content .card-content{
+        padding: 2.5vw 5.5vw;
+        margin: 1vw 2vw;
     }
 }
 .head{
@@ -218,16 +227,27 @@ main{
 }
 .list-name-table{
     font-size: 1.6vw;
-    padding: 0.6vw 0vw 0.6vw 1.5vw;
-    margin: 1vw 5.3vw 0vw 3vw;
-    background: #5ea7f5;
-    color: rgb(10, 10, 10);
-    /* box-shadow: 5px 1px 4px 3px rgba(128, 128, 128, 0.4); */
+    padding: 0;
+    margin: 0vw;
+    color: rgb(252, 250, 250);
 }
 .students-table{
     border-collapse: collapse;
     width: 100%;
     margin: 0 3vw;
+    border-radius: 0vw 0vw 0vw 0.5vw;
+}
+.table-head{
+    display: flex;
+    justify-content: space-between;
+    background: #1d4b7c;
+    margin:0vw 5.3vw 0vw 3vw ;
+    border-radius: 0.5vw 0.5vw 0vw 0vw;
+    padding: 0.4vw 2vw;
+}
+.table-head button i{
+    margin-left: 0.5vw;
+    font-size: 1vw;
 }
 .students-table th{
     /* text-align: left; */
@@ -324,5 +344,8 @@ td .actions-button i{
     }
     .modal-body.delete-modal{
         height: 250px;
+    }
+    .table-head button i{
+        font-size: 2vw;
     }
 }
