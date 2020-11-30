@@ -33,39 +33,44 @@ header{
     font-size: 2vw;
     float: right;
     padding: 0.5vw 1.5vw;
-    display: none;
+    /* display: none; */
+}
+.closebtn:hover{
+    text-decoration-line: none;
+    color:rgb(107, 108, 109) ;
 }
 .sidenav{
     position: fixed;
     background: rgb(0, 140, 255);
     left: 0vw;
-    margin-top: 5.9vw;
+    margin-top: 6.3vw;
     width: 16%;
     height: 100%;
     transition: 0.5s;
-    /* transition-property: left; */
-    /* overflow-x: hidden; */
+    transition-property: left;
+    overflow-x: hidden;
 }
-/* .sidenav .profile{
-    margin: 1vw auto;
-} */
-.sidenav .profile img{
-    width: 100% auto;
-    max-width: 30%;
-    border-radius: 100%;
-    margin-top: 1.5vw;
+.sidenav .profile{
+    display: flex;
+    width: 100%;
+}
+.sidenav .profile p{
+    margin-top: 1.3vw;
     margin-bottom: 1vw;
-    /* margin-left: 4vw; */
-}
-/* .close-sidenav{
-    display: none;
-} */
-.close-sidenav.close{
-    display: inline-block;
-}
-.name{
     font-size: 1.3vw;
     color: white;
+    line-height: 2vw;
+    letter-spacing: 0.3vw;
+    font-weight: 500;
+}
+.sidenav .profile img{
+    width: 100%;
+    max-width: 30%;
+    border-radius: 100%;
+    margin-top: 0.5vw;
+    margin-bottom: 2vw;
+    margin-left: 1vw;
+    margin-right: 0.8vw;
 }
 .general{
     font-size: 1.2vw;

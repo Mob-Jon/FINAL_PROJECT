@@ -8,6 +8,11 @@ $(document).ready(() => {
         $('.sidenav').toggle(500);
         $('main').css('margin-left', '10px');
     });
+  //CLOSE_BUTTON
+  $('.closebtn').on('click', function(){
+    $('#sidebar').css('width','0px');
+    $('main').css('margin-left', '10px');
+  })
   //DISPLAY SPECIFIC CONTENT
     $('#dashboard').show();
     $('#student').hide();
