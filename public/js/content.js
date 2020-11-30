@@ -4,9 +4,10 @@ $(document).ready(() => {
           $(this).addClass('active').siblings().removeClass('active');
     });
   //TOGGLE BARS
-    // $('.fa-bars').on('click', function(){
-    //     $('.sidenav').toggle(500);
-    // });
+    $('.fa-bars').on('click', function(){
+        $('.sidenav').toggle(500);
+        $('main').css('margin-left', '10px');
+    });
   //DISPLAY SPECIFIC CONTENT
     $('#dashboard').show();
     $('#student').hide();

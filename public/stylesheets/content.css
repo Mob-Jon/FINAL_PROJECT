@@ -28,27 +28,38 @@ header{
 .fa-bars:hover{
     color:rgb(107, 108, 109) ;
 }
+.closebtn{
+    color: aliceblue;
+    font-size: 2vw;
+    float: right;
+    padding: 0.5vw 1.5vw;
+    display: none;
+}
 .sidenav{
     position: fixed;
     background: rgb(0, 140, 255);
     left: 0vw;
-    margin-top: 6.3vw;
+    margin-top: 5.9vw;
     width: 16%;
     height: 100%;
     transition: 0.5s;
     /* transition-property: left; */
     /* overflow-x: hidden; */
 }
+/* .sidenav .profile{
+    margin: 1vw auto;
+} */
 .sidenav .profile img{
-    width: 100%;
+    width: 100% auto;
     max-width: 30%;
     border-radius: 100%;
-    margin-top: 1.2vw;
+    margin-top: 1.5vw;
     margin-bottom: 1vw;
+    /* margin-left: 4vw; */
 }
-.close-sidenav{
+/* .close-sidenav{
     display: none;
-}
+} */
 .close-sidenav.close{
     display: inline-block;
 }
@@ -108,7 +119,7 @@ button.btn-mode{
     
 }
 main{
-    width: 85%;
+    width: 85% auto;
     margin-left: 17vw;
     margin-top: 6vw;
     padding: 0vw 1vw 0vw 0.5vw;
