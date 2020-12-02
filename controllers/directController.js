@@ -1,5 +1,5 @@
 const studentModel = require('../models/studentModel')
-const studentValidator = require('../validation/studentValidation')
+    // const studentValidator = require('../validation/studentValidation')
 const facultyModel = require('../models/facultyModel')
 const parseRequestBody = require("../utils/parseRequestBody");
 // const { getAllStudent } = require('./studentController');
@@ -46,43 +46,27 @@ module.exports = {
                 gender: req.body.gender,
                 address: req.body.address,
                 email: req.body.email,
-                contactnumber: req.body.contactnumber,
                 course: req.body.course,
-                year: req.body.year
+                yearlevel: req.body.yearlevel,
+                schoolyear: req.body.schoolyear
             }
 
-            const result = Joi.validate(studentValidator, student)
-            const { value, error } = result
-            const valid = error == null
+            const newStudent = new studentModel(student)
+            const all = await newStudent.save()
 
-            if (!valid) {
-                console.log(error)
+            if (!all) {
                 return res.status(404).json({
                     error: "Error in adding student"
                 })
-            } else {
-                const newStudent = new studentModel(student)
-                const all = await newStudent.save()
-
-                res.redirect('/#student')
-                console.log(req.body)
             }
-
-            // const newStudent = new studentModel(student)
-            // const all = await newStudent.save()
-
-            // if (!all) {
-            //     return res.status(404).json({
-            //         error: "Error in adding student"
-            //     })
-            // }
-            // // res.status(200).json({
-            // //     message: "added successfully",
-            // //     all: all
-            // // })
-            // res.redirect('/#student')
-            // console.log(req.body)
+            // res.status(200).json({
+            //     message: "added successfully",
+            //     all: all
+            // })
+            res.redirect('/#student')
+            console.log(req.body)
         } catch (error) {
+            console.log(error);
             console.log(req.body)
             return res.status(404).json({
                 error: error
@@ -191,15 +175,16 @@ module.exports = {
     async addTeacher(req, res) {
         try {
             const teacher = {
-                firstname1: req.body.firstname,
-                lastname1: req.body.lastname,
-                middlename1: req.body.middlename,
-                age1: req.body.age,
-                gender1: req.body.gender,
-                address1: req.body.address,
-                email1: req.body.address,
-                contactnumber1: req.body.contactnumber,
-                course1: req.body.course
+                firstname: req.body.firstname,
+                lastname: req.body.lastname,
+                middlename: req.body.middlename,
+                age: req.body.age,
+                gender: req.body.gender,
+                address: req.body.address,
+                email: req.body.address,
+                contact: req.body.contactnumber,
+                course: req.body.course,
+                yearlevel: req.body.yearlevel
             }
             const newTeacher = new facultyModel(teacher)
             const all = await newTeacher.save()
@@ -215,6 +200,7 @@ module.exports = {
             res.redirect('/')
             console.log(req.body);
         } catch (error) {
+            console.log(error)
             return res.status(404).json({
                 error: error
             })
