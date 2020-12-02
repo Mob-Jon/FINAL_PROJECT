@@ -1,19 +1,25 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+const database = require('./services/database')
+const router = require('./routes/insideRouter')
+const PORT = process.env.PORT || 2000
 
-const database = require('./services/studentDatabase')
-    // const studentController = require('./controllers/studentController')
-const router = require('./routes/studentRouter')
 
-// app.use(express.json())
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+    // app.use(express.json())
 app.set("view engine", "ejs")
 app.use(express.static('public'))
-app.use("/", router)
+
+app.use('/', router)
+
 
 
 database.connect()
 
 
-app.listen(2000, () => {
-    console.log("Port listening to 2000")
+app.listen(PORT, () => {
+    console.log(`Connected to port ${PORT}`)
 })
