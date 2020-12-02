@@ -4,13 +4,15 @@ const Schema = mongoose.Schema
 const facultySchema = Schema({
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
-    middlename: { type: String, required: false },
     age: { type: Number, required: true },
+    gender: { type: String, required: true },
     address: { type: String, required: true },
-    contactnumber: { type: String, required: true },
-    course: { type: Array, required: true }
+    email: { type: String, required: true },
+    contact: { type: String, required: true },
+    course: { type: String, required: true },
+    yearlevel: { type: String, required: true },
 })
 
-const student = mongoose.model("faculty", facultySchema)
+const teacher = mongoose.model("faculty", facultySchema)
 
-module.exports = student
+module.exports = teacher

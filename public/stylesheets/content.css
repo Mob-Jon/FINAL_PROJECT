@@ -1,24 +1,28 @@
-body{
+body {
     margin: 0vw;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
-header{
-    background: linear-gradient(to right, white,rgb(0, 140, 255));
+
+header {
+    background: linear-gradient(to right, white, rgb(0, 140, 255));
     width: 100%;
     position: fixed;
     margin: 0vw 0vw;
 }
-.logo{
+
+.logo {
     display: flex;
     justify-content: space-between;
 }
-.logo img{
+
+.logo img {
     width: 100%;
     max-width: 18%;
     margin: -3vw 0vw -3vw 5vw;
 }
-.fa-bars{
+
+.fa-bars {
     transition: 0.3s;
     transition-property: color;
     padding: 2vw 4vw;
@@ -26,21 +30,25 @@ header{
     color: rgb(255, 253, 253);
     display: none;
 }
-.fa-bars:hover{
-    color:rgb(107, 108, 109) ;
+
+.fa-bars:hover {
+    color: rgb(107, 108, 109);
 }
-.closebtn{
+
+.closebtn {
     color: aliceblue;
     font-size: 2vw;
     float: right;
     padding: 0.5vw 1.5vw;
     display: none;
 }
-.closebtn:hover{
+
+.closebtn:hover {
     text-decoration-line: none;
-    color:rgb(107, 108, 109) ;
+    color: rgb(107, 108, 109);
 }
-.sidenav{
+
+.sidenav {
     position: fixed;
     background: rgb(0, 140, 255);
     left: 0vw;
@@ -51,11 +59,13 @@ header{
     transition-property: left;
     overflow-x: hidden;
 }
-.sidenav .profile{
+
+.sidenav .profile {
     display: flex;
     width: 100%;
 }
-.sidenav .profile p{
+
+.sidenav .profile p {
     margin-top: 1.3vw;
     margin-bottom: 1vw;
     font-size: 1.3vw;
@@ -64,7 +74,8 @@ header{
     letter-spacing: 0.3vw;
     font-weight: 500;
 }
-.sidenav .profile img{
+
+.sidenav .profile img {
     width: 100%;
     max-width: 30%;
     border-radius: 100%;
@@ -73,20 +84,24 @@ header{
     margin-left: 1vw;
     margin-right: 0.8vw;
 }
-.general{
+
+.general {
     font-size: 1.2vw;
     margin: 1.5vw 1vw 0.3vw 0.5vw;
 }
-nav ul li a{
+
+nav ul li a {
     display: block;
 }
-nav ul{
+
+nav ul {
     list-style: none;
     width: 100%;
     margin: 0 auto;
     padding: 0.3vw 0vw 0vw 0vw;
 }
-nav li{
+
+nav li {
     padding: 0.75vw 0vw 0.75vw 1.3vw;
     margin: 0vw 0vw 0vw 0.5vw;
     font-size: 1.2vw;
@@ -94,37 +109,45 @@ nav li{
     transition-property: background;
     border-radius: 0.7vw 0vw 0vw 0.7vw;
 }
-nav li:hover{
+
+nav li:hover {
     background: rgb(109, 179, 236);
 }
-nav a{
+
+nav a {
     text-decoration-line: none;
     color: rgb(3, 68, 121);
 }
-nav a:hover{
+
+nav a:hover {
     text-decoration-line: none;
     color: black;
 }
+
 nav i {
     padding: 0vw .5vw 0vw 0vw;
 }
-nav li.active{
+
+nav li.active {
     /* background: rgb(1, 86, 155); */
     background: white;
 }
-nav .user a , nav .user li{
+
+nav .user a,
+nav .user li {
     color: white;
     font-size: 1.1vw;
     list-style: none;
 }
-button.btn-mode{
+
+button.btn-mode {
     background-color: black;
     color: white;
     margin: 1vw 3vw;
     font-size: 1vw;
-    
 }
-main{
+
+main {
     width: 85% auto;
     margin-left: 17vw;
     margin-top: 6vw;
@@ -132,68 +155,79 @@ main{
     transition: 0.5s;
     transition-property: margin-left;
 }
-.content{
+
+.content {
     width: 80% auto;
     margin: 0 auto;
 }
-.hr-content{
+
+.hr-content {
     border: 0.1px solid rgba(156, 155, 155, 0.5);
 }
-@media (max-width: 700px) and (min-width:300px){
-    .fa-bars{
+
+@media (max-width: 700px) and (min-width:300px) {
+    .fa-bars {
         display: block;
     }
-    .sidenav{
+    .sidenav {
         display: none;
         margin-top: 6.3vw;
     }
-    main{
+    main {
         width: 100%;
         margin-left: 1vw;
         margin-top: 1vw;
         padding: 0;
     }
-    .closebtn{
+    .closebtn {
         display: block;
     }
 }
-.content-name{
+
+.content-name {
     font-size: 2.5vw;
 }
-.main-content{
+
+.main-content {
     display: flex;
     justify-content: space-around;
     margin: 2.5vw 0vw 0vw 0vw;
 }
-.main-content .card-content{
+
+.main-content .card-content {
     box-shadow: 1px 2px 20px 4px rgba(128, 128, 128, 0.322);
     padding: 2.5vw 5.5vw;
     border-radius: 0.3vw;
     background-color: rgb(247, 247, 247);
 }
-.card-content-name{
+
+.card-content-name {
     font-size: 1.5vw;
     color: black;
 }
+
 @media (max-width: 800px) {
-    .main-content{
+    .main-content {
         flex-direction: column;
     }
-    .main-content .card-content{
+    .main-content .card-content {
         padding: 2.5vw 5.5vw;
         margin: 1vw 2vw;
     }
 }
-.head{
+
+.head {
     display: flex;
     justify-content: space-between;
     margin: 1vw auto -1vw auto;
 }
-.add-btn{
+
+.add-btn {
     padding: 1.3vw 2vw 0vw 0vw;
 }
+
 .add-btn button,
-.add-btn button:focus{
+.add-btn button:focus {
     padding: 0.7vw 0.9vw;
     margin-top: -1.3vw;
     background-color: rgb(0, 140, 255);
@@ -202,73 +236,94 @@ main{
     border-radius: 0.5vw;
     font-size: 1vw;
 }
-.add-btn i{
+
+.add-btn i {
     padding-right: .2vw;
 }
-.student-main-content-searches{
+
+.student-main-content-searches {
     margin: 2.8vw 0vw;
 }
-.student-main-content-form{
+
+.student-main-content-form {
     display: flex;
     justify-content: space-evenly;
 }
-.student-main-content-form .form-col{
+
+.student-main-content-form .form-col {
     display: flex;
     margin: 0 0.3vw;
 }
-.student-main-content-form .form-col select, .student-main-content-form .form-col input{
+
+.student-main-content-form .form-col select,
+.student-main-content-form .form-col input {
     padding: 0.5vw 0.5vw;
-    border:1px solid rgb(0, 140, 255);
+    border: 1px solid rgb(0, 140, 255);
     font-size: 0.9vw;
 }
-.form-col select option{
+
+.form-col select option {
     background: rgb(0, 140, 255);
     color: white;
     font-size: 1vw;
     margin: 2vw 0vw;
 }
-.form-col select option:hover{
+
+.form-col select option:hover {
     background: rgb(6, 43, 73);
 }
-.form-col select:focus, .form-col input:focus{
-    outline: none !important;
-    border:1px solid rgb(0, 140, 255);
-    box-shadow: 0vw 0vw 0.5vw 0vw#6497ce;
 
+.form-col select:focus,
+.form-col input:focus {
+    outline: none !important;
+    border: 1px solid rgb(0, 140, 255);
+    box-shadow: 0vw 0vw 0.5vw 0vw#6497ce;
 }
-.form-col button{
+
+.form-col button {
     /* color: white; */
     /* background-color: rgb(0, 140, 255);
     border: 1px solid rgb(0, 140, 255); */
     border-radius: 0vw 0.3vw 0.3vw 0vw;
     font-size: 1vw;
 }
-.form-col select, .form-col input{
+
+.form-col select,
+.form-col input {
     border-radius: 0.3vw 0vw 0vw 0.3vw;
 }
-.form-col button:hover , .form-col button:focus{
+
+.form-col button:hover,
+.form-col button:focus {
     background-color: transparent;
     border: 1px solid rgb(0, 140, 255);
     color: rgb(0, 140, 255);
     transition: 0.5s;
 }
-.list-name-table{
+
+.list-name-table {
     font-size: 1.6vw;
     padding: 0;
     margin: 0vw;
     color: rgb(252, 250, 250);
 }
-.students-table{
+
+.students-table {
     border-collapse: collapse;
     width: 100% auto;
     margin: 0 3vw;
     border-radius: 0vw 0vw 0vw 0.5vw;
 }
-.table-head{
+
+.table-head {
     display: flex;
     justify-content: space-between;
     background: #1d4b7c;
+<<<<<<< HEAD
     margin:0vw 3.5vw 0vw 3vw ;
+=======
+    margin: 0vw 5.3vw 0vw 3vw;
+>>>>>>> b9914ad9e9e112b634b49cdc7ac699f8498b2cf5
     border-radius: 0.5vw 0.5vw 0vw 0vw;
     padding: 0.4vw 0vw 0.4vw 1vw;
     width: 100% auto;
@@ -277,63 +332,88 @@ main{
     margin-right: 1vw;
     font-size: 1.3vw;
 }
-.table-head button i{
+
+.table-head button i {
     margin-left: 0.5vw;
     font-size: 1vw;
 }
-.students-table th{
+
+.students-table th {
     /* text-align: left; */
     background-color: rgb(0, 140, 255);
     color: white;
 }
-.students-table td, th{
+
+.students-table td,
+th {
     border: 1px solid #ddd;
     padding: 0.5vw 0.6vw;
 }
-.students-table tr:nth-child(even){
+
+.students-table tr:nth-child(even) {
     background-color: rgba(6, 142, 253, 0.452);
 }
-.students-table tr:hover{
+
+.students-table tr:hover {
     background-color: rgb(98, 177, 241);
 }
-.students-table td{
+
+.students-table td {
     font-size: 1vw;
 }
-.students-table th{
+
+.students-table th {
     font-size: 1.2vw;
 }
-td .actions-button{
+
+td .actions-button {
     padding: 0.5vw 0.7vw;
     font-size: 1vw;
 }
-td .actions-button i{
+
+td .actions-button i {
     padding-right: 0.3vw;
 }
+
 .dark-mode {
     background-color: black;
     color: white;
 }
-.modal-body.update{
+
+.modal-body.update {
     display: flex;
     flex-direction: column;
 }
-.modal-body .col-body{
+
+.modal-body .col-body {
     display: flex;
+<<<<<<< HEAD
     margin: 2vw 1vw 0vw 2vw; 
+=======
+    margin: 2vw 0vw 0vw 5vw;
+>>>>>>> b9914ad9e9e112b634b49cdc7ac699f8498b2cf5
     justify-content: space-between;
 }
-.col-body-content{
+
+.col-body-content {
     margin: 0 1vw;
 }
-.col-body-content label{
+
+.col-body-content label {
     font-size: 1.2vw;
     font-weight: bold;
 }
+<<<<<<< HEAD
 .col-body-content input, select{
+=======
+
+.col-body-content input {
+>>>>>>> b9914ad9e9e112b634b49cdc7ac699f8498b2cf5
     border: 2px solid rgb(98, 177, 241);
     border-radius: 4px;
     outline: #5ea7f5;
 }
+<<<<<<< HEAD
 .col-body-content input{
     padding: 0.2vw 0.8vw 0.2vw 0vw;
 }
@@ -346,48 +426,65 @@ td .actions-button i{
 
 .col-body-content input:focus, select:focus{
     box-shadow:1px 1px 1px 1px #5ea7f59c;
+=======
+
+.col-body-content input:focus {
+    box-shadow: 1px 1px 1px 2px #5ea7f59c;
+>>>>>>> b9914ad9e9e112b634b49cdc7ac699f8498b2cf5
 }
-.modal-body.delete-modal{
+
+.modal-body.delete-modal {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 350px;
     margin: 0vw auto;
 }
-.delete-modal .btn-delete{
+
+.delete-modal .btn-delete {
     padding: 1vw 8vw;
     font-size: 1.7vw;
-    margin: 0 1vw;  
+    margin: 0 1vw;
 }
-.fa-question-circle{
+
+.fa-question-circle {
     font-size: 10vw;
     background: -webkit-linear-gradient(rgb(240, 52, 68), rgb(28, 151, 233));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-@media screen and (max-width:600px){
-    .modal-body .col-body{
+
+@media screen and (max-width:600px) {
+    .modal-body .col-body {
         flex-direction: column;
         margin: 0;
     }
-    .col-body-content label{
+    .col-body-content label {
         font-size: 2.3vw;
         font-weight: bold;
         margin: 0;
     }
+<<<<<<< HEAD
     .col-body-content input,select{
+=======
+    .col-body-content input {
+>>>>>>> b9914ad9e9e112b634b49cdc7ac699f8498b2cf5
         width: 400px;
     }
-    .fa-question-circle{
+    .fa-question-circle {
         font-size: 15vw;
     }
-    .delete-modal .btn-delete{
+    .delete-modal .btn-delete {
         font-size: 3vw;
     }
-    .modal-body.delete-modal{
+    .modal-body.delete-modal {
         height: 250px;
     }
+<<<<<<< HEAD
     /* .table-head button{
+=======
+    .table-head button i {
+>>>>>>> b9914ad9e9e112b634b49cdc7ac699f8498b2cf5
         font-size: 2vw;
     } */
 }
