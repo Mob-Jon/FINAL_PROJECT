@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="shortcut icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTwmAnnBXWoSfPss-rnSImn8FemiVYaZ8eQ&usqp=CAU"
+    type="image/icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="../public/stylesheets/content.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <title>SOUTHAMPTON UNIVERSITY</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../public/Images/output-onlinepngtools.png" alt="" />
+      <i class="fas fa-bars" id="toggle-bar"></i>
+      <!-- <button class="openbtn" onclick="openNav()">☰</button>   -->
+    </div>
+  </header>
+  <aside class="sidenav" id="sidebar">
+    <!-- <button type="button" class="close-sidenav" data-dismiss="sidenav">
+      &times;
+    </button> -->
+    <a href="javascript:void(0)" class="closebtn">&times;</a>
+    <br>
+    <div class="profile">
+        <img
+          src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/"
+          alt="profile" />
+        <p class="name">JONALYN MOBILLA</p>
+    </div>
+    <hr />
+    <nav>
+      <p class="general"><strong>GENERAL</strong></p>
+      <ul>
+        <li class="active">
+          <a href="#dashboard"><i class="fas fa-desktop"></i> Dashboard</a>
+        </li>
+        <li>
+          <a href="#student"><i class="fas fa-users"></i> Students</a>
+        </li>
+        <li>
+          <a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a>
+        </li>
+        <li>
+          <a href="#recognition"><i class="fas fa-trophy"></i> Recognitions</a>
+        </li>
+      </ul>
+      <div class="user">
+        <p class="general"><strong>USER</strong></p>
+        <li>
+          <a href=""><i class="fas fa-sign-out-alt"></i>Log out</a>
+        </li>
+        <button class="btn-mode btn">Dark mode</button>
+      </div>
+    </nav>
+  </aside>
+  <br /><br />
+  <main>
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="content">
+      <p class="content-name"><strong>Dashboard</strong></p>
+      <hr class="hr-content" />
+      <div class="main-content">
+        <div class="card-content">
+          <p class="card-content-name">
+            <strong>No. of Student <br /><span>S.Y 2019-present</span></strong>
+          </p>
+        </div>
+        <div class="card-content">
+          <p class="card-content-name">
+            <strong>No. of students <br /><span>S.Y 2018-2019</span></strong>
+          </p>
+        </div>
+        <div class="card-content">
+          <p class="card-content-name"><strong>School revenue</strong></p>
+        </div>
+      </div>
+      <div>
+        <canvas id="bar-chart" width="1000" height="350"></canvas>
+      </div>
+    </div>
+    <!-- STUDENTS -->
+    <div id="student" class="content">
+      <!-- <i class="fas fa-bars"></i> -->
+      <div class="head">
+        <p class="content-name"><strong>Students</strong></p>
+        <div class="add-btn">
+          <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1-2" class="btn-primary">
+            <i class="fas fa-user-plus"></i>ADD STUDENT
+          </button>
+        </div>
+      </div>
+      <hr class="hr-content" />
+      <div class="students-main-content">
+        <div class="student-main-content-searches">
+          <form action="" method="post" class="student-main-content-form">
+            <div class="form-col">
+              <!-- <input type="text" name="search-by-course" placeholder="search by course"> -->
+              <select name="select-course" id="course">
+                <option value="">SELECT COURSE</option>
+                <option value="">CCT</option>
+                <option value="">BSIT</option>
+                <option value="">BS Interior Design</option>
+                <option value="">BSA</option>
+                <option value="">BSBA Major in MM</option>
+                <option value="">BSED</option>
+                <option value="">BSCE</option>
+                <option value="">AB Broadcasting</option>
+                <option value="">BA</option>
+                <option value="">BS Psychology</option>
+              </select>
+              <button type="submit" class="btn btn-info">Search Student</button>
+            </div>
+            <div class="form-col">
+              <input type="text" name="search-by-year" placeholder="search by year" />
+              <button type="submit" class="btn btn-info">Search Student</button>
+            </div>
+            <div class="form-col">
+              <input type="text" name="search-by-surname" placeholder="search by surname" />
+              <button type="submit" class="btn btn-info">Search Student</button>
+            </div>
+            <div class="form-col">
+              <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
+              <select name="select-school-year" id="school-year">
+                <option value="">S.Y 2019-2020</option>
+                <option value="">S.Y 2019-2018</option>
+                <option value="">S.Y 2018-2017</option>
+                <option value="">S.Y 2017-2016</option>
+              </select>
+              <button type="submit" class="btn btn-info">Search Student</button>
+            </div>
+          </form>
+        </div>
+
+        <table class="students-table table-responsive">
+          <div class="table-head">
+            <p class="list-name-table"><strong>List of all Students</strong></p>
+            <button class="btn">Sort<i class="fas fa-sort"></i></button>
+          </div>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Birthdate</th>
+            <th>Address</th>
+            <th>Contact No.</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Year</th>
+            <th>Actions</th>
+          </tr>
+          <tr>
+            <td>Jonalyn</td>
+            <td>Mobilla</td>
+            <td>20</td>
+            <td>01-17-2000</td>
+            <td>Leyte</td>
+            <td>09071152272</td>
+            <td>jonalynmobilla69@gmail.com</td>
+            <td>CCT</td>
+            <td>2</td>
+            <td>
+              <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-2">
+                <i class="fas fa-edit"></i>Update
+              </button>
+              <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                <i class="fas fa-trash"></i>Delete
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Quency</td>
+            <td>Atacador</td>
+            <td>19</td>
+            <td>01-19-2000</td>
+            <td>Samar</td>
+            <td>09958471254</td>
+            <td>quencyatacador@gmail.com</td>
+            <td>CCT</td>
+            <td>2</td>
+            <td>
+              <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-2">
+                <i class="fas fa-edit"></i>Update
+              </button>
+              <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                <i class="fas fa-trash"></i>Delete
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Shenna</td>
+            <td>Caneda</td>
+            <td>19</td>
+            <td>12-23-2000</td>
+            <td>Leyte</td>
+            <td>09254879632</td>
+            <td>shennacaneda@gmail.com</td>
+            <td>CCT</td>
+            <td>2</td>
+            <td>
+              <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-2">
+                <i class="fas fa-edit"></i>Update
+              </button>
+              <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                <i class="fas fa-trash"></i>Delete
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- FACULTY -->
+    <div id="faculty" class="content">
+      <div id="student" class="content">
+        <div class="head">
+          <!-- <i class="fas fa-bars"></i> -->
+          <p class="content-name"><strong>Faculty</strong></p>
+          <div class="add-btn">
+            <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1" class="btn-primary">
+              <i class="fas fa-user-plus"></i>ADD INSTRUCTOR
+            </button>
+          </div>
+        </div>
+        <hr class="hr-content" />
+        <div class="students-main-content">
+          <div class="student-main-content-searches">
+            <form action="" method="post" class="student-main-content-form">
+              <div class="form-col">
+                <!-- <input type="text" name="search-by-course" placeholder="search by course"> -->
+                <select name="select-course" id="course">
+                  <option value="">SELECT COURSE</option>
+                  <option value="">CCT</option>
+                  <option value="">BSIT</option>
+                  <option value="">BS Interior Design</option>
+                  <option value="">BSA</option>
+                  <option value="">BSBA Major in MM</option>
+                  <option value="">BSED</option>
+                  <option value="">BSCE</option>
+                  <option value="">AB Broadcasting</option>
+                  <option value="">BA</option>
+                  <option value="">BS Psychology</option>
+                </select>
+                <button type="submit" class="btn btn-info">Search Instructor</button>
+              </div>
+              <div class="form-col">
+                <input type="text" name="search-by-year" placeholder="search by year" />
+                <button type="submit" class="btn btn-info">Search Instructor</button>
+              </div>
+              <div class="form-col">
+                <input type="text" name="search-by-surname" placeholder="search by surname" />
+                <button type="submit" class="btn btn-info">Search Instructor</button>
+              </div>
+              <div class="form-col">
+                <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
+                <select name="select-school-year" id="school-year">
+                  <option value="">S.Y 2019-2020</option>
+                  <option value="">S.Y 2019-2018</option>
+                  <option value="">S.Y 2018-2017</option>
+                  <option value="">S.Y 2017-2016</option>
+                </select>
+                <button type="submit" class="btn btn-info">Search Instructor</button>
+              </div>
+            </form>
+          </div>
+          <table class="students-table table-responsive">
+            <div class="table-head">
+              <p class="list-name-table"><strong>List of all Instructors</strong></p>
+              <button class="btn">Sort<i class="fas fa-sort"></i></button>
+            </div>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Age</th>
+              <th>Birthdate</th>
+              <th>Address</th>
+              <th>Contact No.</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Actions</th>
+            </tr>
+            <tr>
+              <td>Jonalyn</td>
+              <td>Mobilla</td>
+              <td>20</td>
+              <td>01-17-2000</td>
+              <td>Leyte</td>
+              <td>09071152272</td>
+              <td>jonalynmobilla69@gmail.com</td>
+              <td>CCT</td>
+              <td>2</td>
+              <td>
+                <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-2">
+                  <i class="fas fa-edit"></i>Update
+                </button>
+                <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                  <i class="fas fa-trash"></i>Delete
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Quency</td>
+              <td>Atacador</td>
+              <td>19</td>
+              <td>01-19-2000</td>
+              <td>Samar</td>
+              <td>09958471254</td>
+              <td>quencyatacador@gmail.com</td>
+              <td>CCT</td>
+              <td>2</td>
+              <td>
+                <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-2">
+                  <i class="fas fa-edit"></i>Update
+                </button>
+                <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                  <i class="fas fa-trash"></i>Delete
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Shenna</td>
+              <td>Caneda</td>
+              <td>19</td>
+              <td>12-23-2000</td>
+              <td>Leyte</td>
+              <td>09254879632</td>
+              <td>shennacaneda@gmail.com</td>
+              <td>CCT</td>
+              <td>2</td>
+              <td>
+                <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-2">
+                  <i class="fas fa-edit"></i>Update
+                </button>
+                <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                  <i class="fas fa-trash"></i>Delete
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- RECOGNITION -->
+    <div id="recognition">
+      <!-- <i class="fas fa-bars"></i> -->
+      <p class="content-name"><strong>Recognitions</strong></p>
+      <hr />
+    </div>
+  </main>
+  <!-- MODAL FOR ADDING STUDENT -->
+  <div class="container">
+    <div class="modal fade" id="myModal-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">ADD INSTRUCTOR</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <i class="fas fa-user-circle text-center"></i> -->
+            <div class="col-1 col-body">
+              <div class="col-body-content">
+                <label>First name:</label>
+                <input type="text" placeholder="Enter first name" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Last name:</label>
+                <input type="text" placeholder="Enter last name" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Age:</label>
+                <input type="text" name="password" id="password" placeholder="Enter age" class="modal-body-form" />
+              </div>
+            </div>
+            <div class="col-2 col-body">
+              <div class="col-body-content">
+                <label>Birthdate:</label>
+                <input type="text" placeholder="Enter birthdate" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Address:</label>
+                <input type="text" placeholder="Enter address" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Contact:</label>
+                <input type="text" placeholder="Enter contact" class="modal-body-form" />
+              </div>
+            </div>
+            <div class="col-3 col-body">
+              <div class="col-body-content">
+                <label>Email:</label>
+                <input type="text" placeholder="Enter email" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Course:</label>
+                <input type="text" placeholder="Enter course" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Year:</label>
+                <input type="text" placeholder="Enter year" class="modal-body-form" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Add Student
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL FOR ADDING STUDENT -->
+  <div class="container">
+    <div class="modal fade" id="myModal-1-2" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">ADD STUDENT</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <i class="fas fa-user-circle text-center"></i> -->
+            <div class="col-1 col-body">
+              <div class="col-body-content">
+                <label>First name:</label>
+                <input type="text" placeholder="Enter first name" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Last name:</label>
+                <input type="text" placeholder="Enter last name" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Age:</label>
+                <input type="text" name="password" id="password" placeholder="Enter age" class="modal-body-form" />
+              </div>
+            </div>
+            <div class="col-2 col-body">
+              <div class="col-body-content">
+                <label>Birthdate:</label>
+                <input type="text" placeholder="Enter birthdate" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Address:</label>
+                <input type="text" placeholder="Enter address" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Contact:</label>
+                <input type="text" placeholder="Enter contact" class="modal-body-form" />
+              </div>
+            </div>
+            <div class="col-3 col-body">
+              <div class="col-body-content">
+                <label>Email:</label>
+                <input type="text" placeholder="Enter email" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Course:</label>
+                <input type="text" placeholder="Enter course" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Year:</label>
+                <input type="text" placeholder="Enter year" class="modal-body-form" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Add Student
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL FOR UPDATE -->
+  <div class="container">
+    <div class="modal fade" id="myModal-2" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">UPDATE STUDENT</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body update">
+            <!-- <i class="fas fa-user-circle text-center"></i> -->
+            <div class="col-1 col-body">
+              <div class="col-body-content">
+                <label>First name:</label>
+                <input type="text" placeholder="Enter first name" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Last name:</label>
+                <input type="text" placeholder="Enter last name" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Age:</label>
+                <input type="text" name="password" id="password" placeholder="Enter age" class="modal-body-form" />
+              </div>
+            </div>
+            <div class="col-2 col-body">
+              <div class="col-body-content">
+                <label>Birthdate:</label>
+                <input type="text" placeholder="Enter birthdate" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Address:</label>
+                <input type="text" placeholder="Enter address" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Contact:</label>
+                <input type="text" placeholder="Enter contact" class="modal-body-form" />
+              </div>
+            </div>
+            <div class="col-3 col-body">
+              <div class="col-body-content">
+                <label>Email:</label>
+                <input type="text" placeholder="Enter email" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Course:</label>
+                <input type="text" placeholder="Enter course" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Year:</label>
+                <input type="text" placeholder="Enter year" class="modal-body-form" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Update
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL FOR DELETE -->
+  <div class="container delete">
+    <div class="modal fade" id="myModal-3" role="dialog">
+      <div class="modal-dialog delete modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body delete-modal">
+            <i class="fas fa-question-circle"></i>
+            <h3>Are you sure you want to delete?</h3>
+            <br>
+            <div>
+              <button class="btn btn-danger btn-delete">Delete</button>
+            <button class="btn btn-default btn-delete" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+// function closeNav() {
+//   document.getElementById("mySidepanel").style.width = "0";
+// }
+</script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="../public/js/content.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

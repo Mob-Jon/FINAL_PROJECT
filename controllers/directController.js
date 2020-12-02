@@ -42,7 +42,6 @@ module.exports = {
             const student = {
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
-                middlename: req.body.middlename,
                 age: req.body.age,
                 gender: req.body.gender,
                 address: req.body.address,
@@ -192,15 +191,15 @@ module.exports = {
     async addTeacher(req, res) {
         try {
             const teacher = {
-                firstname1: req.body.firstname1,
-                lastname1: req.body.lastname1,
-                middlename1: req.body.middlename1,
-                age1: req.body.age1,
-                gender1: req.body.gender1,
-                address1: req.body.address1,
-                email1: req.body.address1,
-                contactnumber1: req.body.contactnumber1,
-                course1: req.body.course1
+                firstname1: req.body.firstname,
+                lastname1: req.body.lastname,
+                middlename1: req.body.middlename,
+                age1: req.body.age,
+                gender1: req.body.gender,
+                address1: req.body.address,
+                email1: req.body.address,
+                contactnumber1: req.body.contactnumber,
+                course1: req.body.course
             }
             const newTeacher = new facultyModel(teacher)
             const all = await newTeacher.save()
