@@ -76,6 +76,9 @@ module.exports = {
     },
     async getStudent(req, res) {
         try {
+            const students = await studentModel.find()
+            const teachers = await facultyModel.find()
+            const teacher = await facultyModel.findOne({ _id: req.params.id })
             const student = await studentModel.findOne({ _id: req.params.id })
 
             if (!student || student.length == 0) {
@@ -86,7 +89,7 @@ module.exports = {
             // res.status(200).json({
             //     student: student
             // })
-            res.render('content', { student: student })
+            res.redirect({ student: student, students: students, teachers: teachers, teacher: teacher }, "/#student")
         } catch (error) {
             return res.status(404).json({
                 error: error
@@ -181,7 +184,7 @@ module.exports = {
                 age: req.body.age,
                 gender: req.body.gender,
                 address: req.body.address,
-                email: req.body.address,
+                email: req.body.email,
                 contact: req.body.contactnumber,
                 course: req.body.course,
                 yearlevel: req.body.yearlevel

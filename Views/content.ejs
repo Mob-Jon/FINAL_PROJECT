@@ -98,47 +98,25 @@
                 <div class="student-main-content-searches">
                     <form action="" method="post" class="student-main-content-form">
                         <div class="form-col">
-                            <!-- <input type="text" name="search-by-course" placeholder="search by course"> -->
-                            <select name="select-course" id="course">
-                                <option value="">SELECT COURSE</option>
-                                <option value="">CCT</option>
-                                <option value="">BSIT</option>
-                                <option value="">BS Interior Design</option>
-                                <option value="">BSA</option>
-                                <option value="">BSBA Major in MM</option>
-                                <option value="">BSED</option>
-                                <option value="">BSCE</option>
-                                <option value="">AB Broadcasting</option>
-                                <option value="">BA</option>
-                                <option value="">BS Psychology</option>
-                            </select>
+                            <input type="number" name="search-by-year" id="searchYear" onkeyup="filterYear()" placeholder="search by year" />
+                            <button class="btn btn-info">Search Student </button>
+                        </div>
+                        <div class="form-col">
+                            <input type="text" name="search-by-surname" id="searchName" onkeyup="filterName()" placeholder="search by surname" />
                             <button type="submit" class="btn btn-info">Search Student</button>
                         </div>
                         <div class="form-col">
-                            <input type="text" name="search-by-year" placeholder="search by year" />
-                            <button type="submit" class="btn btn-info">Search Student</button>
-                        </div>
-                        <div class="form-col">
-                            <input type="text" name="search-by-surname" placeholder="search by surname" />
-                            <button type="submit" class="btn btn-info">Search Student</button>
-                        </div>
-                        <div class="form-col">
-                            <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
-                            <select name="select-school-year" id="school-year">
-                                <option value="">S.Y 2019-2020</option>
-                                <option value="">S.Y 2019-2018</option>
-                                <option value="">S.Y 2018-2017</option>
-                                <option value="">S.Y 2017-2016</option>
-                            </select>
+                            <input type="text" name="search-by-school-year" placeholder="search by school year" id="searchSchool" onkeyup="filterSchool()">
+
                             <button type="submit" class="btn btn-info">Search Student</button>
                         </div>
                     </form>
                 </div>
 
-                <table class="students-table table-responsive">
+                <table class="students-table" id="studentTable">
                     <div class="table-head">
                         <p class="list-name-table"><strong>List of all Students</strong></p>
-                        <button class="btn">Sort<i class="fas fa-sort"></i></button>
+                        <button class="btn" id="sortStudent" onclick="sortStudent()">Sort</i></button>
                     </div>
                     <thead>
                         <tr>
@@ -157,6 +135,7 @@
                     </thead>
                     <tbody>
                         <%students.forEach(function(data){ %>
+                            <!-- <form action="/getstudent/<%=data._id%>" method="get"> -->
                             <tr>
                                 <td>
                                     <%=data.firstname %>
@@ -199,6 +178,7 @@
                                         <i class="fas fa-trash"></i>Delete
                                     </form>
                             </td>
+                        <!-- </form> -->
                         </tr>
 
         <!-- MODAL FOR UPDATE -->
@@ -214,7 +194,7 @@
                                                 &times;
                                             </button>
             </div>
-            <form action="/getstudent/<%=data._id%>" method="GET">
+            <form action="/updateStudent/<%=data._id%>" method="POST">
                 <div class="modal-body update">
                     <!-- <i class="fas fa-user-circle text-center"></i> -->
                     <div class="col-1 col-body">
@@ -293,46 +273,36 @@
                         <div class="student-main-content-searches">
                             <form action="" method="post" class="student-main-content-form">
                                 <div class="form-col">
-                                    <!-- <input type="text" name="search-by-course" placeholder="search by course"> -->
-                                    <select name="select-course" id="course">
-                                    <option value="">SELECT COURSE</option>
-                                    <option value="">CCT</option>
-                                    <option value="">BSIT</option>
-                                    <option value="">BS Interior Design</option>
-                                    <option value="">BSA</option>
-                                    <option value="">BSBA Major in MM</option>
-                                    <option value="">BSED</option>
-                                    <option value="">BSCE</option>
-                                    <option value="">AB Broadcasting</option>
-                                    <option value="">BA</option>
-                                    <option value="">BS Psychology</option>
-                                </select>
+                                    <input type="text" name="search-by-course" placeholder="search by course" id="teacherCourse" onkeyup="filterTeacherCourse()">
+                                    <!-- <select name="course" id="course" class="modal-body-form">
+                                        <option value="Select course">Select course</option>
+                                        <option value="CCT">CCT</option>
+                                        <option value="BSIT">BSIT</option>
+                                        <option value="BS Interior Design">BS Interior Design</option>
+                                        <option value="BSA">BSA</option>
+                                        <option value="BSBA Major in MM">BSBA Major in MM</option>
+                                        <option value="BSED">BSED</option>
+                                        <option value="BSCE">BSCE</option>
+                                        <option value="AB Broadcasting">AB Broadcasting</option>
+                                        <option value="BA">BA</option>
+                                        <option value="BS Psychology">BS Psychology</option>
+                                      </select> -->
                                     <button type="submit" class="btn btn-info">Search Instructor</button>
                                 </div>
                                 <div class="form-col">
-                                    <input type="text" name="search-by-year" placeholder="search by year" />
+                                    <input type="text" name="search-by-year" placeholder="search by surname" id="teacherName" onkeyup="filterTeacherName()" />
                                     <button type="submit" class="btn btn-info">Search Instructor</button>
                                 </div>
                                 <div class="form-col">
-                                    <input type="text" name="search-by-surname" placeholder="search by surname" />
-                                    <button type="submit" class="btn btn-info">Search Instructor</button>
-                                </div>
-                                <div class="form-col">
-                                    <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
-                                    <select name="select-school-year" id="school-year">
-                                    <option value="">S.Y 2019-2020</option>
-                                    <option value="">S.Y 2019-2018</option>
-                                    <option value="">S.Y 2018-2017</option>
-                                    <option value="">S.Y 2017-2016</option>
-                                </select>
+                                    <input type="text" name="search-by-surname" placeholder="search by year" id="teacherYear" onkeyup="filterTeacherYear()" />
                                     <button type="submit" class="btn btn-info">Search Instructor</button>
                                 </div>
                             </form>
                         </div>
-                        <table class="students-table table-responsive">
+                        <table class="students-table mw-100 auto" id="facultyTable">
                             <div class="table-head">
                                 <p class="list-name-table"><strong>List of all Instructors</strong></p>
-                                <button class="btn">Sort<i class="fas fa-sort"></i></button>
+                                <button class="btn" onclick="sortTeacher()">Sort</button>
                             </div>
                             <thead>
                                 <tr>
@@ -343,8 +313,8 @@
                                     <th>Address</th>
                                     <th>Email</th>
                                     <th>Contact No.</th>
-                                    <th>Year-Level</th>
                                     <th>Course</th>
+                                    <th>Year-Level</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
@@ -405,7 +375,74 @@
             <!-- <i class="fas fa-bars"></i> -->
             <p class="content-name"><strong>Recognitions</strong></p>
             <hr />
-        </div>
+            <div class="recognition-content">
+              <div class="content-award-img">
+                <img src="https://www.findaphd.com/bespoke-pages/custom-pages/bpid1158/img2017127560.jpg" alt="" />
+                <h2>RANKINGS</h2>
+                <div class="awards-content">
+                  <img
+                    src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/8C199E34176A49BBA85CE59D6C7F7D62/SundayTimes(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg"
+                    alt="" />
+                  <div class="award-description">
+                    <h4>Sunday Times 2021 rankings</h4>
+                    <p>
+                      We're ranked 15th in The Times and The Sunday Times Good
+                      University Guide 2021, with 1st place for Physiotherapy and 14
+                      more subjects in the top 10.
+                    </p>
+                  </div>
+                </div>
+                <div class="awards-content">
+                  <img
+                    src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/945C07AB604A4902BEE0BEE62B457031/qs(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg"
+                    alt="" />
+                  <div class="award-description">
+                    <h4>QS World University Rankings</h4>
+                    <p>
+                      We're in the top 100 in the QS World University Rankings 2021, based on indicators such as research
+                      excellence and employability.
+                    </p>
+                  </div>
+                </div>
+                <div class="awards-content">
+                  <img
+                    src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/188E49C32689456191E4C3CF943F6609/TEF%20Silver%20logo%20update.jpg_SIA_JPG_fit_to_width_MEDIUM.jpg"
+                    alt="" />
+                  <div class="award-description">
+                    <h4>Teaching Excellence Framework</h4>
+                    <p>
+                      We've been awarded Silver in the Teaching Excellence and Student Outcomes Framework (TEF) for our
+                      quality teaching and learning.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <aside>
+                <h3>RECOGNITIONS</h3>
+                <div class="side-content">
+                  <div class="side-content-award">
+                    <i class="fas fa-trophy"></i>
+                    <h4>TOP 15 UK UNIVERSITY</h4>
+                  </div>
+                  <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                  <div class="side-content-award">
+                    <i class="fas fa-users"></i>
+                    <h4>GLOBAL #1 BUSINESS INCUBATOR</h4>
+                  </div>
+                  <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                  <div class="side-content-award">
+                    <i class="fas fa-microscope"></i>
+                    <h4>RESEARCH INTENSITY: 8TH IN UK</h4>
+                  </div>
+                  <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                  <div class="side-content-award">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>GLOBAL TOP 100 UNIVERSITY</h4>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
     </main>
     <!-- MODAL FOR ADDING STUDENT -->
     <div class="container">
@@ -440,7 +477,7 @@
                                 <div class="col-body-content">
                                     <label>Gender:</label>
                                     <select name="gender" id="gender" class="modal-body-form">
-                                        <option hidden value="Select Gender">Select Gender</option>
+                                        <option hidden value="">Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
                                       </select>
@@ -458,7 +495,7 @@
                                 <div class="col-body-content">
                                     <label>Course:</label>
                                     <select name="course" id="course" class="modal-body-form">
-                                        <option value="Select course">Select course</option>
+                                        <option value="">Select course</option>
                                         <option value="CCT">CCT</option>
                                         <option value="BSIT">BSIT</option>
                                         <option value="BS Interior Design">BS Interior Design</option>
@@ -474,17 +511,17 @@
                                 <div class="col-body-content">
                                     <label>Year-Level:</label>
                                     <select name="yearlevel" id="year" class="modal-body-form">
-                                        <option value="Select year level">Select year level</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
+                                        <option value="">Select year level</option>
+                                        <option value="1st year">1st year</option>
+                                        <option value="2nd year">2nd year</option>
+                                        <option value="3rd year">3rd year</option>
+                                        <option value="4th year">4th year</option>
                                       </select>
                                 </div>
                                 <div class="col-body-content">
                                     <label>School-Year:</label>
                                     <select name="schoolyear" id="sy" class="modal-body-form">
-                                        <option value="Select school year">Select school year</option>
+                                        <option value="">Select school year</option>
                                         <option value="2019-2020">2019-2020</option>
                                         <option value="2018-2019">2018-2019</option>
                                         <option value="2017-2018">2017-2018</option>
@@ -538,7 +575,7 @@
                                         <div class="col-body-content">
                                             <label>Gender:</label>
                                             <select name="gender" id="gender" class="modal-body-form">
-                                                <option hidden value="Select Gender">Select Gender</option>
+                                                <option hidden value="">Select Gender</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                               </select>
@@ -560,7 +597,7 @@
                                         <div class="col-body-content">
                                             <label>Course:</label>
                                             <select name="course" id="course" class="modal-body-form">
-                                                <option value="Select course">Select course</option>
+                                                <option value="">Select course</option>
                                                 <option value="CCT">CCT</option>
                                                 <option value="BSIT">BSIT</option>
                                                 <option value="BS Interior Design">BS Interior Design</option>
@@ -577,10 +614,10 @@
                                             <label>Year-Level:</label>
                                             <select name="yearlevel" id="year" class="modal-body-form">
                                                 <option hidden>Select year level</option>
-                                                <option value="1st year">1</option>
-                                                <option value="2nd year">2</option>
-                                                <option value="3rd year">3</option>
-                                                <option value="4th year">4</option>
+                                                <option value="1st year">1st year</option>
+                                                <option value="2nd year">2nd year</option>
+                                                <option value="3rd year">3rd year</option>
+                                                <option value="4th year">4th year</option>
                                               </select>
                                         </div>
                                     </div>
@@ -607,6 +644,7 @@
             </script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
             <script src="./js/content.js"></script>
+            <script src="./js/search.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
