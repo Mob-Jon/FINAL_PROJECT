@@ -29,12 +29,11 @@
       &times;
     </button> -->
     <a href="javascript:void(0)" class="closebtn">&times;</a>
-    <br>
+    <br />
     <div class="profile">
-        <img
-          src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/"
-          alt="profile" />
-        <p class="name">JONALYN MOBILLA</p>
+      <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/"
+        alt="profile" />
+      <p class="name">JONALYN MOBILLA</p>
     </div>
     <hr />
     <nav>
@@ -117,15 +116,21 @@
                 <option value="">BA</option>
                 <option value="">BS Psychology</option>
               </select>
-              <button type="submit" class="btn btn-info">Search Student</button>
+              <button type="submit" class="btn btn-info">
+                Search Student
+              </button>
             </div>
             <div class="form-col">
               <input type="text" name="search-by-year" placeholder="search by year" />
-              <button type="submit" class="btn btn-info">Search Student</button>
+              <button type="submit" class="btn btn-info">
+                Search Student
+              </button>
             </div>
             <div class="form-col">
               <input type="text" name="search-by-surname" placeholder="search by surname" />
-              <button type="submit" class="btn btn-info">Search Student</button>
+              <button type="submit" class="btn btn-info">
+                Search Student
+              </button>
             </div>
             <div class="form-col">
               <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
@@ -135,14 +140,18 @@
                 <option value="">S.Y 2018-2017</option>
                 <option value="">S.Y 2017-2016</option>
               </select>
-              <button type="submit" class="btn btn-info">Search Student</button>
+              <button type="submit" class="btn btn-info">
+                Search Student
+              </button>
             </div>
           </form>
         </div>
 
         <table class="students-table table-responsive">
           <div class="table-head">
-            <p class="list-name-table"><strong>List of all Students</strong></p>
+            <p class="list-name-table">
+              <strong>List of all Students</strong>
+            </p>
             <button class="btn">Sort<i class="fas fa-sort"></i></button>
           </div>
           <tr>
@@ -248,31 +257,29 @@
                   <option value="">BA</option>
                   <option value="">BS Psychology</option>
                 </select>
-                <button type="submit" class="btn btn-info">Search Instructor</button>
+                <button type="submit" class="btn btn-info">
+                  Search Instructor
+                </button>
               </div>
               <div class="form-col">
                 <input type="text" name="search-by-year" placeholder="search by year" />
-                <button type="submit" class="btn btn-info">Search Instructor</button>
+                <button type="submit" class="btn btn-info">
+                  Search Instructor
+                </button>
               </div>
               <div class="form-col">
                 <input type="text" name="search-by-surname" placeholder="search by surname" />
-                <button type="submit" class="btn btn-info">Search Instructor</button>
-              </div>
-              <div class="form-col">
-                <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
-                <select name="select-school-year" id="school-year">
-                  <option value="">S.Y 2019-2020</option>
-                  <option value="">S.Y 2019-2018</option>
-                  <option value="">S.Y 2018-2017</option>
-                  <option value="">S.Y 2017-2016</option>
-                </select>
-                <button type="submit" class="btn btn-info">Search Instructor</button>
+                <button type="submit" class="btn btn-info">
+                  Search Instructor
+                </button>
               </div>
             </form>
           </div>
           <table class="students-table table-responsive">
             <div class="table-head">
-              <p class="list-name-table"><strong>List of all Instructors</strong></p>
+              <p class="list-name-table">
+                <strong>List of all Instructors</strong>
+              </p>
               <button class="btn">Sort<i class="fas fa-sort"></i></button>
             </div>
             <tr>
@@ -355,7 +362,7 @@
       <hr />
     </div>
   </main>
-  <!-- MODAL FOR ADDING STUDENT -->
+  <!-- MODAL FOR ADDING IINSTRUCTOR -->
   <div class="container">
     <div class="modal fade" id="myModal-1" role="dialog">
       <div class="modal-dialog modal-lg">
@@ -380,41 +387,66 @@
               </div>
               <div class="col-body-content">
                 <label>Age:</label>
-                <input type="text" name="password" id="password" placeholder="Enter age" class="modal-body-form" />
+                <input type="text" placeholder="Enter age" class="modal-body-form" />
               </div>
             </div>
             <div class="col-2 col-body">
               <div class="col-body-content">
-                <label>Birthdate:</label>
-                <input type="text" placeholder="Enter birthdate" class="modal-body-form" />
+                <label>Gender:</label>
+                <!-- <input type="text" placeholder="Enter gender" class="modal-body-form" /> -->
+                <select name="genbder" id="gender" class="modal-body-form" >
+                  <option value="">Select Gender</option>
+                  <option value="">Male</option>
+                  <option value="">Female</option>
+                </select>
               </div>
               <div class="col-body-content">
                 <label>Address:</label>
                 <input type="text" placeholder="Enter address" class="modal-body-form" />
               </div>
               <div class="col-body-content">
-                <label>Contact:</label>
-                <input type="text" placeholder="Enter contact" class="modal-body-form" />
+                <label>Email:</label>
+                <input type="text" placeholder="Enter email" class="modal-body-form" />
               </div>
             </div>
             <div class="col-3 col-body">
               <div class="col-body-content">
-                <label>Email:</label>
-                <input type="text" placeholder="Enter email" class="modal-body-form" />
+                <label>Contact:</label>
+                <input type="text" placeholder="Enter contact" class="modal-body-form" />
+              </div>
+              <div class="col-body-content">
+                <label>Year level:</label>
+                <!-- <input type="text" placeholder="Enter year" class="modal-body-form" /> -->
+                <select name="year-level" id="gender" class="modal-body-form" >
+                  <option value="">Select year level</option>
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                </select>
               </div>
               <div class="col-body-content">
                 <label>Course:</label>
-                <input type="text" placeholder="Enter course" class="modal-body-form" />
-              </div>
-              <div class="col-body-content">
-                <label>Year:</label>
-                <input type="text" placeholder="Enter year" class="modal-body-form" />
+                <!-- <input type="text" placeholder="Enter course" class="modal-body-form" /> -->
+                <select name="course" id="course" class="modal-body-form">
+                  <option value="">Select course</option>
+                  <option value="">CCT</option>
+                  <option value="">BSIT</option>
+                  <option value="">BS Interior Design</option>
+                  <option value="">BSA</option>
+                  <option value="">BSBA Major in MM</option>
+                  <option value="">BSED</option>
+                  <option value="">BSCE</option>
+                  <option value="">AB Broadcasting</option>
+                  <option value="">BA</option>
+                  <option value="">BS Psychology</option>
+                </select>
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">
-              Add Student
+              Add Instructor
             </button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">
               Cancel
@@ -454,30 +486,58 @@
             </div>
             <div class="col-2 col-body">
               <div class="col-body-content">
-                <label>Birthdate:</label>
-                <input type="text" placeholder="Enter birthdate" class="modal-body-form" />
+                <label>Gender:</label>
+                <select name="gender" id="gender" class="modal-body-form" >
+                  <option value="">Select Gender</option>
+                  <option value="">Male</option>
+                  <option value="">Female</option>
+                </select>
               </div>
               <div class="col-body-content">
                 <label>Address:</label>
                 <input type="text" placeholder="Enter address" class="modal-body-form" />
               </div>
               <div class="col-body-content">
-                <label>Contact:</label>
-                <input type="text" placeholder="Enter contact" class="modal-body-form" />
+                <label>Email:</label>
+                <input type="text" placeholder="Enter email" class="modal-body-form" />
               </div>
             </div>
             <div class="col-3 col-body">
               <div class="col-body-content">
-                <label>Email:</label>
-                <input type="text" placeholder="Enter email" class="modal-body-form" />
-              </div>
-              <div class="col-body-content">
                 <label>Course:</label>
-                <input type="text" placeholder="Enter course" class="modal-body-form" />
+                <select name="course" id="course" class="modal-body-form">
+                  <option value="">Select course</option>
+                  <option value="">CCT</option>
+                  <option value="">BSIT</option>
+                  <option value="">BS Interior Design</option>
+                  <option value="">BSA</option>
+                  <option value="">BSBA Major in MM</option>
+                  <option value="">BSED</option>
+                  <option value="">BSCE</option>
+                  <option value="">AB Broadcasting</option>
+                  <option value="">BA</option>
+                  <option value="">BS Psychology</option>
+                </select>
               </div>
               <div class="col-body-content">
-                <label>Year:</label>
-                <input type="text" placeholder="Enter year" class="modal-body-form" />
+                <label>Year level:</label>
+                <select name="year-level" id="year" class="modal-body-form" >
+                  <option value="">Select year level</option>
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                </select>
+              </div>
+              <div class="col-body-content">
+                <label>School year:</label>
+                <select name="sy" id="sy" class="modal-body-form" >
+                  <option value="">Select school year</option>
+                  <option value="">2019-2020</option>
+                  <option value="">2018-2019</option>
+                  <option value="">2017-2018</option>
+                  <option value="">2016-2017</option>
+                </select>
               </div>
             </div>
           </div>
@@ -518,7 +578,7 @@
               </div>
               <div class="col-body-content">
                 <label>Age:</label>
-                <input type="text" name="password" id="password" placeholder="Enter age" class="modal-body-form" />
+                <input type="text" placeholder="Enter age" class="modal-body-form" />
               </div>
             </div>
             <div class="col-2 col-body">
@@ -576,21 +636,23 @@
           <div class="modal-body delete-modal">
             <i class="fas fa-question-circle"></i>
             <h3>Are you sure you want to delete?</h3>
-            <br>
+            <br />
             <div>
               <button class="btn btn-danger btn-delete">Delete</button>
-            <button class="btn btn-default btn-delete" data-dismiss="modal">Cancel</button>
+              <button class="btn btn-default btn-delete" data-dismiss="modal">
+                Cancel
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-<script>
-// function closeNav() {
-//   document.getElementById("mySidepanel").style.width = "0";
-// }
-</script>
+  <script>
+      // function closeNav() {
+      //   document.getElementById("mySidepanel").style.width = "0";
+      // }
+  </script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="../public/js/content.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>

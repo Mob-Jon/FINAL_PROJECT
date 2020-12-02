@@ -169,9 +169,11 @@ main{
     box-shadow: 1px 2px 20px 4px rgba(128, 128, 128, 0.322);
     padding: 2.5vw 5.5vw;
     border-radius: 0.3vw;
+    background-color: rgb(247, 247, 247);
 }
 .card-content-name{
     font-size: 1.5vw;
+    color: black;
 }
 @media (max-width: 800px) {
     .main-content{
@@ -258,7 +260,7 @@ main{
 }
 .students-table{
     border-collapse: collapse;
-    width: 100%;
+    width: 100% auto;
     margin: 0 3vw;
     border-radius: 0vw 0vw 0vw 0.5vw;
 }
@@ -266,9 +268,14 @@ main{
     display: flex;
     justify-content: space-between;
     background: #1d4b7c;
-    margin:0vw 5.3vw 0vw 3vw ;
+    margin:0vw 3.5vw 0vw 3vw ;
     border-radius: 0.5vw 0.5vw 0vw 0vw;
-    padding: 0.4vw 2vw;
+    padding: 0.4vw 0vw 0.4vw 1vw;
+    width: 100% auto;
+}
+.table-head button{
+    margin-right: 1vw;
+    font-size: 1.3vw;
 }
 .table-head button i{
     margin-left: 0.5vw;
@@ -312,7 +319,7 @@ td .actions-button i{
 }
 .modal-body .col-body{
     display: flex;
-    margin: 2vw 0vw 0vw 5vw; 
+    margin: 2vw 1vw 0vw 2vw; 
     justify-content: space-between;
 }
 .col-body-content{
@@ -322,13 +329,23 @@ td .actions-button i{
     font-size: 1.2vw;
     font-weight: bold;
 }
-.col-body-content input{
+.col-body-content input, select{
     border: 2px solid rgb(98, 177, 241);
     border-radius: 4px;
     outline: #5ea7f5;
 }
-.col-body-content input:focus{
-    box-shadow:1px 1px 1px 2px #5ea7f59c;
+.col-body-content input{
+    padding: 0.2vw 0.8vw 0.2vw 0vw;
+}
+.col-body-content select{
+    padding: 0.2vw 2.5vw 0.2vw 0vw;
+}
+.col-body-content select#gender, select#year{
+    padding-right: 5vw;
+}
+
+.col-body-content input:focus, select:focus{
+    box-shadow:1px 1px 1px 1px #5ea7f59c;
 }
 .modal-body.delete-modal{
     display: flex;
@@ -358,7 +375,7 @@ td .actions-button i{
         font-weight: bold;
         margin: 0;
     }
-    .col-body-content input{
+    .col-body-content input,select{
         width: 400px;
     }
     .fa-question-circle{
@@ -370,7 +387,7 @@ td .actions-button i{
     .modal-body.delete-modal{
         height: 250px;
     }
-    .table-head button i{
+    /* .table-head button{
         font-size: 2vw;
-    }
+    } */
 }

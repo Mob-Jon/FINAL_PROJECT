@@ -7,7 +7,7 @@ const getAllTeacher = async(req, res) => {
         const teachers = await facultyModel.find()
         if (!teachers) {
             return res.status(404).json({
-                error: "Error in getting all teachers' information"
+                error: "Error in getting all teachers' information";
             })
         }
         res.status(200).json({
