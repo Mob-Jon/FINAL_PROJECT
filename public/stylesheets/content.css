@@ -73,6 +73,7 @@ header {
     line-height: 2vw;
     letter-spacing: 0.3vw;
     font-weight: 500;
+    font-family: 'Poppins', sans-serif;
 }
 
 .sidenav .profile img {
@@ -88,6 +89,7 @@ header {
 .general {
     font-size: 1.2vw;
     margin: 1.5vw 1vw 0.3vw 0.5vw;
+    font-family: 'Poppins', sans-serif;
 }
 
 nav ul li a {
@@ -370,7 +372,76 @@ td .actions-button {
 td .actions-button i {
     padding-right: 0.3vw;
 }
-
+    /*  RECOGNITIONS    */
+.recognition-content{
+    display: flex;
+    justify-content: space-around;
+    margin: 3vw 1vw;
+}
+.recognition-content img{
+    width: 100%;
+    max-width: 100%;
+    max-height: 50%;
+}
+.content-award-img h2{
+    text-decoration-line: overline;
+    margin: 5vw 0vw 0vw 0vw;
+    text-align: center;
+    font-size: 3vw;
+    letter-spacing: 1vw;
+}
+.awards-content{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5vw 0vw;
+}
+.awards-content .award-description{
+    margin: 1vw 3vw;
+}
+.awards-content .award-description h4{
+    font-size: 1.7vw;
+    margin: 1vw 0vw;
+}
+.awards-content .award-description p{
+    font-size: 1.2vw;
+    text-align: justify;
+}
+.awards-content img{
+    width: 100% auto;
+    max-width: 40%;
+    margin: 1.3vw 1vw;
+}
+aside h3{
+    font-size: 1.5vw;
+    text-align: center;
+    text-decoration-line: overline;
+    margin: 1vw;
+}
+.side-content{
+    display: flex;
+    flex-direction: column;
+    margin: 0vw 1vw;  
+    padding: 2vw 0;
+    box-shadow: 1px 2px 20px 4px rgba(128, 128, 128, 0.322);
+    background-color: rgb(37, 179, 250);
+}
+.side-content-award{
+    padding: 1vw 2vw 0vw 2vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0vw 1vw;
+}
+.side-content-award i{
+    font-size: 2.5vw;
+    color: rgb(10, 10, 10);
+    text-align: center;
+}
+.side-content-award h4{
+    font-size: 1.5vw;
+    color: rgb(14, 13, 13);
+    text-align: center;
+    margin-top: 1vw;
+}
 .dark-mode {
     background-color: black;
     color: white;
