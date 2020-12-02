@@ -6,11 +6,10 @@ const student = Joi.object({
     age: Joi.number().integer().greater(0).required(),
     gender: Joi.string().required(),
     address: Joi.string().required(),
-    // contactnumber: Joi.string().regex(/^\d{3}-\d{4}-\d{3}$/).required(),
     email: Joi.string().email().required(),
+    contactnumber: Joi.string().regex(/^\d{3}-\d{4}-\d{3}$/).required(),
     course: Joi.string().required(),
-    yearlevel: Joi.string().required(),
-    schoolyear: Joi.string().required()
+    yearlevel: Joi.string().required()
 })
 
 module.exports = student

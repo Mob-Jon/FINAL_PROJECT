@@ -10,7 +10,7 @@ const facultySchema = Schema({
     email: { type: String, required: true },
     contact: { type: String, required: true },
     course: { type: String, required: true },
-    yearlevel: { type: String, required: true },
+    yearlevel: { type: String, required: true }
 })
 
 const teacher = mongoose.model("faculty", facultySchema)
