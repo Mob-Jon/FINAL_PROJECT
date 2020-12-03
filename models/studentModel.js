@@ -13,6 +13,5 @@ const studentSchema = Schema({
     schoolyear: { type: String, required: true }
 })
 
-const student = mongoose.model("student", studentSchema)
 
-module.exports = student
+module.exports = mongoose.model("Student", studentSchema)

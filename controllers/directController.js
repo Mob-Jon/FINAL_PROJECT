@@ -1,20 +1,16 @@
-const studentModel = require('../models/studentModel')
-    // const studentValidator = require('../validation/studentValidation')
-const facultyModel = require('../models/facultyModel')
+const Student = require('../models/studentModel')
+const Faculty = require('../models/facultyModel')
 const parseRequestBody = require("../utils/parseRequestBody");
-// const { getAllStudent } = require('./studentController');
-// const { addTeacher } = require('./facultyController');
+
 
 
 module.exports = {
     async homepage(req, res) {
         try {
-            const teachers = await facultyModel.find()
-            const students = await studentModel.find()
-            const student = await studentModel.findOne({ _id: req.params.id })
-            const teacher = await facultyModel.findOne({ _id: req.params.id })
-
-            // console.log(students, teachers);
+            const teachers = await Faculty.find()
+            const students = await Student.find()
+            const student = await Student.findOne({ _id: req.params.id })
+            const teacher = await Faculty.findOne({ _id: req.params.id })
             res.render('content', { students: students, teachers: teachers, student: student, teacher: teacher });
 
         } catch (error) {
@@ -24,7 +20,7 @@ module.exports = {
     },
     async getAllStudent(req, res) {
         try {
-            const students = await studentModel.find()
+            const students = await Student.find()
             if (!students) {
                 return res.status(404).json({
                     error: "Error in getting all students information"
@@ -51,7 +47,7 @@ module.exports = {
                 schoolyear: req.body.schoolyear
             }
 
-            const newStudent = new studentModel(student)
+            const newStudent = new Student(student)
             const all = await newStudent.save()
 
             if (!all) {
@@ -59,10 +55,6 @@ module.exports = {
                     error: "Error in adding student"
                 })
             }
-            // res.status(200).json({
-            //     message: "added successfully",
-            //     all: all
-            // })
             res.redirect('/#student')
             console.log(req.body)
         } catch (error) {
@@ -76,19 +68,16 @@ module.exports = {
     },
     async getStudent(req, res) {
         try {
-            const students = await studentModel.find()
-            const teachers = await facultyModel.find()
-            const teacher = await facultyModel.findOne({ _id: req.params.id })
-            const student = await studentModel.findOne({ _id: req.params.id })
+            const students = await Student.find()
+            const teachers = await Faculty.find()
+            const teacher = await Faculty.findOne({ _id: req.params.id })
+            const student = await Student.findOne({ _id: req.params.id })
 
             if (!student || student.length == 0) {
                 return res.status(404).json({
                     error: "No student recorded with this id"
                 })
             }
-            // res.status(200).json({
-            //     student: student
-            // })
             res.redirect({ student: student, students: students, teachers: teachers, teacher: teacher }, "/#student")
         } catch (error) {
             return res.status(404).json({
@@ -97,44 +86,24 @@ module.exports = {
         }
     },
 
-    async getModal(req, res) {
-        try {
-            const modal = !!req.body.update_modal
-
-            res.render('content', { modal })
-        } catch (error) {
-
-        }
-    },
-
     async editStudent(req, res) {
-        // const updatestudent = parseRequestBody(req.body)
         try {
-            const data = {
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
-                middlename: req.body.middlename,
-                age: req.body.age,
-                address: req.body.address,
-                email: req.body.email,
-                contactnumber: req.body.contactnumber,
-                course: req.body.course,
-                year: req.body.year,
-            }
-            const result = studentModel.updateOne({ _id: req.params.id }, { $set: data })
 
-            if (!result) {
-                console.log("error")
-                return res.status(404).json({
-                    error: "Error in updating the student"
-                })
-            }
-            // res.status(200).json({
-            //     result: result
-            // })
-            res.redirect('/', { modal })
+            await Student.updateOne({ _id: req.params.id }, parseRequestBody(req.body), (error) => {
+                if (error) {
+                    console.log(error);
+                    return res.status(404).json({
+                        error: error
+                    })
+
+                }
+                return res.redirect('/')
+            })
+
+
         } catch (error) {
-            console.log("error")
+            // console.log(req.body)
+            console.log(error)
             return res.status(404).json({
                 error: error
             })
@@ -142,13 +111,12 @@ module.exports = {
     },
     async delStudent(req, res) {
         try {
-            const result = await studentModel.deleteOne({ _id: req.params.id })
+            const result = await Student.deleteOne({ _id: req.params.id })
             if (!result) {
                 return res.status(400).json({
                     error: "error",
                 });
             }
-            // $('#student').show()
             res.redirect('/')
         } catch (error) {
             console.log(error);
@@ -159,15 +127,12 @@ module.exports = {
     },
     async getAllTeacher(req, res) {
         try {
-            const teachers = facultyModel.find()
+            const teachers = Faculty.find()
             if (!teachers) {
                 return res.status(404).json({
                     error: "Error in getting all teachers' information"
                 })
             }
-            // res.status(200).json({
-            //         teachers: teachers
-            //     })
             res.render('content', { teachers: teachers })
         } catch (error) {
             return res.status(404).json({
@@ -189,7 +154,7 @@ module.exports = {
                 course: req.body.course,
                 yearlevel: req.body.yearlevel
             }
-            const newTeacher = new facultyModel(teacher)
+            const newTeacher = new Faculty(teacher)
             const all = await newTeacher.save()
 
             if (!all) {
@@ -197,9 +162,6 @@ module.exports = {
                     error: "Error in adding a teacher"
                 })
             }
-            // res.status(200).json({
-            //     message: "added successfully"
-            // })
             res.redirect('/')
             console.log(req.body);
         } catch (error) {
@@ -229,17 +191,14 @@ module.exports = {
         }
     },
     async editTeacher(req, res) {
-        const updateteacher = parseRequestBody(req.body)
         try {
-            const result = facultyModel.updateOne({ _id: req.params.id }, { $set: updateteacher })
-
-            if (!result) {
-                return res.status(404).json({
-                    error: "Error in updating a teacher"
-                })
-            }
-            res.status(200).json({
-                result: result
+            await Faculty.updateOne({ _id: req.params.id }, parseRequestBody(req.body), (teacher) => {
+                if (!teacher) {
+                    return res.status(404).json({
+                        error: "Error in updating a teacher"
+                    })
+                }
+                return res.redirect('/')
             })
         } catch (error) {
             return res.status(404).json({
@@ -249,17 +208,12 @@ module.exports = {
     },
     async delTeacher(req, res) {
         try {
-            const result = await facultyModel.deleteOne({ _id: req.params.id })
+            const result = await Faculty.deleteOne({ _id: req.params.id })
             if (!result) {
                 return res.status(400).json({
                     error: "error",
                 });
             }
-
-            // res.status(200).json({
-            //     message: "Successfully deleting a tacher record",
-            //     result: result,
-            // });
             res.redirect('/')
         } catch (error) {
             return res.status(404).json({
